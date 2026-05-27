@@ -1,0 +1,27 @@
+{
+  "name": "cli-anything-wps",
+  "display_name": "WPS Office CLI",
+  "version": "1.0.0",
+  "description": "Command-line control for WPS Office via COM automation. Supports Writer (Word), Calc (Excel), and Impress (PowerPoint) with full document CRUD, style management, PDF/DOCX/XLSX/PPTX export, and interactive REPL mode. Windows-only, requires WPS Office and pywin32.",
+  "category": "office",
+  "requires": "Python >= 3.10, Windows, WPS Office, pywin32>=305",
+  "homepage": "https://github.com/yb2460/cli-anything-wps",
+  "source_url": "https://github.com/yb2460/cli-anything-wps",
+  "package_manager": "pip",
+  "pip_package": "cli-anything-wps",
+  "install_cmd": "pip install cli-anything-wps",
+  "skill_md": "https://github.com/yb2460/cli-anything-wps/blob/main/cli_anything/wps/skills/SKILL.md",
+  "entry_point": "cli-anything-wps",
+  "keywords": ["wps", "office", "automation", "com", "word", "excel", "powerpoint", "windows"],
+  "contributors": [
+    {
+      "name": "yb2460",
+      "url": "https://github.com/yb2460"
+    }
+  ],
+  "com_interface": {
+    "writer": "KWPS.Application",
+    "calc": "KET.Application",
+    "impress": "KWPP.Application"
+  }
+}
