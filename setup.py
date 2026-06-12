@@ -1,4 +1,4 @@
-"""WPS Office CLI harness - setup."""
+"""harness-anything monorepo - setup."""
 from setuptools import setup, find_namespace_packages
 
 setup(
@@ -19,10 +19,12 @@ setup(
     entry_points={
         "console_scripts": [
             "cli-anything-wps=cli_anything.wps.wps_cli:main",
+            "cli-anything-zotero=cli_anything.zotero.zotero_cli:entrypoint",
         ],
     },
     package_data={
         "cli_anything.wps": ["skills/*.md"],
+        "cli_anything.zotero": ["skills/*.md"],
     },
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -31,6 +33,8 @@ setup(
         "Operating System :: Microsoft :: Windows",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "Topic :: Office/Business :: Office Suites",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
