@@ -1,0 +1,146 @@
+{
+  "canvas": {"w": 960, "h": 540},
+  "slides": [
+    {
+      "id": 1, "title": "封面",
+      "elements": [
+        {"type": "text", "x": 60, "y": 60, "w": 840, "h": 150, "text": "华中科技大学\n2025年本科招生录取数据", "fs": 48, "color": "#004098", "bold": true, "align": 2, "font": "SimHei", "line_spacing": 1.3},
+        {"type": "text", "x": 60, "y": 240, "w": 840, "h": 50, "text": "29省招生 · 67个专业 · 7305名新生 · 启明实验班", "fs": 26, "color": "#555555", "bold": false, "align": 2},
+        {"type": "cards_1x4_info", "items": [
+          {"num": "7305", "label": "新生总人数"},
+          {"num": "29省", "label": "覆盖省市"},
+          {"num": "1768", "label": "湖北本地名额"},
+          {"num": "67个", "label": "本科专业"}
+        ], "start_y": 340}
+      ]
+    },
+    {
+      "id": 2, "title": "目录",
+      "elements": [
+        {"type": "text", "x": 60, "y": 28, "w": 840, "h": 55, "text": "目  录", "fs": 46, "color": "#333333", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "card_list_wide", "items": [
+          {"num": "01", "title": "招生总览", "sub": "7305人 · 招生类型 · 渠道分布"},
+          {"num": "02", "title": "各省录取人数 + 图表", "sub": "TOP12省份 · 湖北1768人断层第一"},
+          {"num": "03", "title": "各省投档分数线", "sub": "河南668 · 安徽660 · 山西653 · 四川652"},
+          {"num": "04", "title": "热门专业分数线", "sub": "启明实验班668 · 临床667 · 计算机663"},
+          {"num": "05", "title": "湖北省录取详情", "sub": "1768人 · 物理1279+历史372 · 最低591起"},
+          {"num": "06", "title": "校园风光", "sub": "森林大学 · 7000亩校园 · 图片展示"},
+          {"num": "07", "title": "核心数据总结", "sub": "六大报考亮点"}
+        ], "start_y": 92, "item_h": 55, "gap": 3,
+           "title_color": "#1A1A1A", "sub_color": "#555555"}
+      ]
+    },
+    {
+      "id": 3, "title": "招生总览",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "2025 年招生总体概况", "fs": 44, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 20, "y": 65, "w": 460, "h": 350, "file": "images/chart_types.png"},
+        {"type": "text", "x": 510, "y": 74, "w": 420, "h": 32, "text": "招生规模", "fs": 30, "color": "#004098", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 510, "y": 112, "w": 420, "h": 50, "text": "29省录取 7305人  67个专业\n机械/光电/电气/医学全国顶尖", "fs": 22, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.4},
+        {"type": "text", "x": 510, "y": 185, "w": 420, "h": 32, "text": "湖北主场", "fs": 30, "color": "#BE1E2D", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 510, "y": 223, "w": 420, "h": 50, "text": "湖北1768人 占总计划24%\n物理1279 + 历史372", "fs": 22, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.4},
+        {"type": "text", "x": 510, "y": 296, "w": 420, "h": 32, "text": "王牌学科", "fs": 30, "color": "#E87722", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 510, "y": 334, "w": 420, "h": 50, "text": "机械A+ 光学A+ 电气A\n临床医学 计算机 人工智能", "fs": 22, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.4}
+      ]
+    },
+    {
+      "id": 4, "title": "各省录取人数",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "各省录取人数 TOP12", "fs": 44, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 20, "y": 60, "w": 560, "h": 350, "file": "images/chart_provinces.png"},
+        {"type": "table", "x": 605, "y": 70, "w": 335, "h": 220, "rows": 9, "cols": 3,
+         "header_color": "#004098", "th_fs": 13, "td_fs": 14,
+         "data": [
+           ["排名","省份","人数"],
+           ["1","湖北","1768"],
+           ["2","河南","555"],
+           ["3","湖南","520"],
+           ["4","江西","485"],
+           ["5","四川","278"],
+           ["6","江苏","262"],
+           ["7","广西","259"],
+           ["8","安徽","257"]
+        ]},
+        {"type": "text", "x": 605, "y": 305, "w": 335, "h": 120, "text": "湖北1768人 断层第一\n占总计划24%\n\n河南555人 湖南520人\n华中三省超2800人\n占总计划38%", "fs": 20, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.4}
+      ]
+    },
+    {
+      "id": 5, "title": "各省投档分数线",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "六省物理类投档线对比", "fs": 42, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 25, "y": 62, "w": 540, "h": 310, "file": "images/chart_scores.png"},
+        {"type": "table", "x": 590, "y": 72, "w": 345, "h": 300, "rows": 12, "cols": 3,
+         "header_color": "#BE1E2D", "th_fs": 13, "td_fs": 13,
+         "data": [
+           ["省份","物理","历史"],
+           ["河南","668","634"],
+           ["安徽","660","628"],
+           ["山西","653","—"],
+           ["四川","652","621"],
+           ["江苏","647","623"],
+           ["广东","646","622"],
+           ["湖南","646","614"],
+           ["重庆","644","603"],
+           ["浙江","643(综合)","—"],
+           ["辽宁","640","616"],
+           ["北京","639-652","639"]
+        ]}
+      ]
+    },
+    {
+      "id": 6, "title": "热门专业分数线",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "热门专业分数线（山东省）", "fs": 42, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 20, "y": 60, "w": 550, "h": 350, "file": "images/chart_majors.png"},
+        {"type": "table", "x": 595, "y": 70, "w": 340, "h": 240, "rows": 9, "cols": 3,
+         "header_color": "#004098", "th_fs": 13, "td_fs": 13,
+         "data": [
+           ["专业","分数","位次"],
+           ["光电(启明)","668","1043"],
+           ["临床医学","667","1056"],
+           ["计算机类","663","1570"],
+           ["电气工程","662","1676"],
+           ["人工智能","661","1739"],
+           ["电子信息","660","1896"],
+           ["自动化","656","—"],
+           ["机械类","651","—"]
+        ]}
+      ]
+    },
+    {
+      "id": 7, "title": "校园风光",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "森林大学 · 校园风光", "fs": 44, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 25, "y": 65, "w": 295, "h": 200, "file": "images/campus_1.jpg"},
+        {"type": "image", "x": 333, "y": 65, "w": 295, "h": 200, "file": "images/campus_2.jpg"},
+        {"type": "image", "x": 640, "y": 65, "w": 295, "h": 200, "file": "images/campus_3.jpg"},
+        {"type": "image", "x": 25, "y": 280, "w": 295, "h": 200, "file": "images/dormitory.jpg"},
+        {"type": "text", "x": 335, "y": 285, "w": 290, "h": 90, "text": "7000亩森林校园\n绿化覆盖率72%\n东九湖/青年园\n喻家山/醉晚亭", "fs": 24, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.5},
+        {"type": "image", "x": 640, "y": 280, "w": 295, "h": 200, "file": "images/lab.jpg"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "森林中的大学 · 武汉光谷核心 · 地铁2号线直达 · 全国最大单体校园之一", "color": "#004098"}
+      ]
+    },
+    {
+      "id": 8, "title": "核心总结",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "六大报考亮点", "fs": 44, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "cards_2x3", "items": [
+          {"title": "工科顶尖", "desc": "机械A+ 光学A+ 电气A\n计算机/人工智能强势\n启明实验班668分起", "color": "#004098"},
+          {"title": "医学强劲", "desc": "临床医学667分\n同济医学院附属协和\n本博连读8年制", "color": "#BE1E2D"},
+          {"title": "湖北主场", "desc": "1768人占总计划24%\n物理1279+历史372\n591分起即可入学", "color": "#E87722"},
+          {"title": "华中腹地", "desc": "河南555+湖南520\n+江西485+四川278\n华中考生优先选择", "color": "#007F6E"},
+          {"title": "多元录取", "desc": "普通批+强基+专项\n中外合作147人\n护理591低分通道", "color": "#2B6CB0"},
+          {"title": "武汉机遇", "desc": "光谷核心 名企云集\n华为/小米/长江存储\n校招重点目标院校", "color": "#004098"}
+        ], "start_y": 68}
+      ]
+    },
+    {
+      "id": 9, "title": "致谢",
+      "elements": [
+        {"type": "text", "x": 60, "y": 120, "w": 840, "h": 120, "text": "明德厚学  求是创新", "fs": 54, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 260, "w": 840, "h": 140, "text": "华中科技大学 2025 年本科招生录取数据全景\n\n数据来源: 华科大招生网(zsb.hust.edu.cn) · 各省教育考试院\n网络收集版仅供参考 · 请以官方发布为准", "fs": 24, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.6},
+        {"type": "text", "x": 60, "y": 480, "w": 840, "h": 40, "text": "2026年6月  ·  Claude Code + WPS COM 生成", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    }
+  ]
+}
