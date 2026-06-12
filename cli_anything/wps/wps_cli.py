@@ -132,7 +132,7 @@ def cli(ctx, use_json, project_path, dry_run):
             sess.set_project(proj, project_path)
 
     if ctx.invoked_subcommand is None:
-        ctx.invoke(repl, project_path=None)
+        ctx.invoke(repl, project_path=project_path)
 
 
 @cli.result_callback()
@@ -356,6 +356,16 @@ def writer_list():
     output(items, "内容项:")
 
 
+@writer.command("get")
+@click.argument("index", type=int)
+@handle_error
+def writer_get(index):
+    """获取指定索引的内容项详情。"""
+    sess = get_session()
+    item = writer_mod.get_content(sess.get_project(), index)
+    output(item)
+
+
 @writer.command("set-text")
 @click.argument("index", type=int)
 @click.argument("text")
@@ -480,6 +490,18 @@ def calc_merge_cells(start_ref, end_ref, sheet):
     output(result, f"已标记合并: {start_ref}:{end_ref}")
 
 
+@calc.command("clear-cell")
+@click.argument("ref")
+@click.option("--sheet", "-s", type=int, default=0, help="工作表索引")
+@handle_error
+def calc_clear_cell(ref, sheet):
+    """清除单元格的内容。"""
+    sess = get_session()
+    sess.snapshot(f"清除单元格 {ref}")
+    result = calc_mod.clear_cell(sess.get_project(), ref=ref, sheet=sheet)
+    output(result, f"已清除单元格 {ref}")
+
+
 @calc.command("list-sheets")
 @handle_error
 def calc_list_sheets():
@@ -565,6 +587,41 @@ def impress_add_element(slide_index, element_type, text, x, y, width, height):
         x=x, y=y, width=width, height=height,
     )
     output(elem, f"已添加 {element_type} 到幻灯片 {slide_index}")
+
+
+@impress.command("remove-element")
+@click.argument("slide_index", type=int)
+@click.argument("element_index", type=int)
+@handle_error
+def impress_remove_element(slide_index, element_index):
+    """删除幻灯片中的元素。"""
+    sess = get_session()
+    sess.snapshot(f"删除幻灯片 {slide_index} 中的元素 {element_index}")
+    removed = impress_mod.remove_slide_element(sess.get_project(), slide_index, element_index)
+    output(removed, f"已删除幻灯片 {slide_index} 中的元素 {element_index}")
+
+
+@impress.command("move-slide")
+@click.argument("from_index", type=int)
+@click.argument("to_index", type=int)
+@handle_error
+def impress_move_slide(from_index, to_index):
+    """移动幻灯片到新位置。"""
+    sess = get_session()
+    sess.snapshot(f"移动幻灯片 {from_index} → {to_index}")
+    result = impress_mod.move_slide(sess.get_project(), from_index, to_index)
+    output(result, f"已移动幻灯片 {from_index} 到 {to_index}")
+
+
+@impress.command("duplicate-slide")
+@click.argument("index", type=int)
+@handle_error
+def impress_duplicate_slide(index):
+    """复制幻灯片。"""
+    sess = get_session()
+    sess.snapshot(f"复制幻灯片 {index}")
+    slide = impress_mod.duplicate_slide(sess.get_project(), index)
+    output(slide, f"已复制幻灯片 {index}")
 
 
 # ── 样式命令 ──────────────────────────────────────────────────
@@ -895,9 +952,9 @@ def repl(project_path):
 def _repl_help(skin=None):
     commands = {
         "document new|open|save|info|profiles|json": "文档管理",
-        "writer add-paragraph|add-heading|add-list|add-table|add-page-break|add-image|remove|list|set-text|find-replace": "Writer 编辑",
-        "calc add-sheet|remove-sheet|rename-sheet|set-cell|get-cell|set-range|merge-cells|list-sheets": "电子表格编辑",
-        "impress add-slide|remove-slide|set-content|list-slides|add-element": "演示文稿编辑",
+        "writer add-paragraph|add-heading|add-list|add-table|add-page-break|add-image|remove|list|get|set-text|find-replace": "Writer 编辑",
+        "calc add-sheet|remove-sheet|rename-sheet|set-cell|get-cell|set-range|merge-cells|clear-cell|list-sheets": "电子表格编辑",
+        "impress add-slide|remove-slide|set-content|list-slides|add-element|remove-element|move-slide|duplicate-slide": "演示文稿编辑",
         "style create|modify|list|apply|remove": "样式管理",
         "export presets|preset-info|render": "导出文档",
         "session status|undo|redo|history": "会话管理",

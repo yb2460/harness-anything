@@ -2,7 +2,9 @@
 """SUSTech Admissions PPT - WPS COM with tables, charts, images."""
 import os, json, pythoncom, win32com.client
 
-OUT = r"D:\A-资料\A-claudewenjian\PPT制作\南方科技大学\work"
+# 工作目录 —— 默认为脚本所在目录下的 work 子目录
+# 可通过环境变量 WPS_BUILD_OUT 覆盖
+OUT = os.environ.get("WPS_BUILD_OUT", os.path.join(os.path.dirname(os.path.abspath(__file__)), "work"))
 JSON_PATH = os.path.join(OUT, "sustech_data.json")
 BG_IMAGE = os.path.join(OUT, "template_bg.png")
 
