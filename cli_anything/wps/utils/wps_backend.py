@@ -18,6 +18,7 @@ WPS COM ProgID:
 import os
 import sys
 import time
+import shutil
 import subprocess
 from typing import Optional, Tuple
 
@@ -136,7 +137,6 @@ def find_wps_executable() -> str:
 
     # 搜索 PATH
     for name in ("wps.exe", "wps"):
-        import shutil
         path = shutil.which(name)
         if path:
             return path

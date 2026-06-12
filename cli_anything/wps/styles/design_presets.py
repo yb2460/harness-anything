@@ -21,6 +21,38 @@ class DesignPreset:
         return {"name": self.name, "colors": self.colors, "fonts": self.fonts,
                 "spacing": self.spacing, "rules": self.rules}
 
+    def get_rgb_hex(self, color_key: str) -> str:
+        """返回指定颜色的十六进制字符串（如 '#1A3C8B'）。
+
+        Args:
+            color_key: 颜色键名 —— primary / secondary / accent / dark / light / bg
+
+        Returns:
+            十六进制颜色字符串
+        """
+        rgb = self.colors.get(color_key)
+        if not rgb:
+            raise KeyError(f"颜色键不存在: {color_key}。可用: {list(self.colors.keys())}")
+        return f"#{rgb[0]:02X}{rgb[1]:02X}{rgb[2]:02X}"
+
+    def get_com_color(self, color_key: str) -> int:
+        """返回 Windows COM 兼容的 BGR 颜色值（RGBColor 格式）。
+
+        Windows COM 自动化接口（pywin32）使用 BGR 而非 RGB，
+        此方法将预设的 RGB 元组转换为 COM 兼容的 OLE_COLOR 整数值。
+
+        Args:
+            color_key: 颜色键名
+
+        Returns:
+            BGR 整数值（如 0x8B3C1A 对应 RGB(26,60,139)）
+        """
+        rgb = self.colors.get(color_key)
+        if not rgb:
+            raise KeyError(f"颜色键不存在: {color_key}。可用: {list(self.colors.keys())}")
+        r, g, b = rgb
+        return (b << 16) | (g << 8) | r
+
 
 # ============================================
 # 4 大预设主题

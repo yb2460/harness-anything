@@ -2,7 +2,7 @@
 """ZUCC Admissions PPT - WPS COM automation."""
 import os, json, pythoncom, win32com.client
 
-OUT = r"D:\A-资料\A-claudewenjian\PPT制作\浙大城市学院\work"
+OUT = os.environ.get("WPS_BUILD_OUT", os.path.join(os.path.dirname(os.path.abspath(__file__)), "work"))
 JSON_PATH = os.path.join(OUT, "zucc_data.json")
 BG_IMAGE = os.path.join(OUT, "template_bg.png")
 

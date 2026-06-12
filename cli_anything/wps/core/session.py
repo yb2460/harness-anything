@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 def _locked_save_json(path, data, **dump_kwargs) -> None:
-    """原子写入 JSON（带文件锁）。"""
+    """原子写入 JSON（带文件锁，Windows 使用 msvcrt）。"""
     try:
         f = open(path, "r+")
     except FileNotFoundError:
@@ -17,8 +17,8 @@ def _locked_save_json(path, data, **dump_kwargs) -> None:
     with f:
         _locked = False
         try:
-            import fcntl
-            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+            import msvcrt
+            msvcrt.locking(f.fileno(), msvcrt.LK_LOCK, 1)
             _locked = True
         except (ImportError, OSError):
             pass
@@ -29,8 +29,12 @@ def _locked_save_json(path, data, **dump_kwargs) -> None:
             f.flush()
         finally:
             if _locked:
-                import fcntl
-                fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+                try:
+                    f.seek(0)
+                    import msvcrt
+                    msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+                except (ImportError, OSError):
+                    pass
 
 
 class Session:

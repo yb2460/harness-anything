@@ -11,7 +11,7 @@
 
 ---
 
-## 项目简介
+> **注意**：本文件仅覆盖 cli-anything-wps 子项目。完整仓库 [harness-anything](https://github.com/yb2460/harness-anything) 还包含 Zotero 学术助手、Illustrator Harness 和 Photoshop Harness，详见 [README.md](README.md)。
 
 **cli-anything-wps** 是一个基于 [CLI-Anything](https://github.com/HKUDS/CLI-Anything) 架构构建的命令行工具。它将 WPS Office 的 COM 自动化接口封装为 47 个 CLI 命令，让 AI Agent 能够像操控开源软件一样操控闭源的 WPS Office。
 
