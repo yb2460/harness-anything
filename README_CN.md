@@ -206,6 +206,20 @@ WPS COM 接口与 MS Office VBA 高度兼容。如果你只有 Office，把 `wps
 **Q: 如何贡献？**
 Fork 本仓库，提交 PR。或把 `registry_entry.json` 提交到 CLI-Anything 官方市场。
 
+## WPS PPT 自动化生成
+
+[JSON 数据驱动 + 元素类型路由 + WPS COM 即时生成]，详见 [WPS/](WPS/)。
+
+| 项目 | 页数 | 元素 |
+|------|------|------|
+| 华中科技大学 | 9页 | 4图表+5校园图 |
+| 南方科技大学 | 10页 | 4图表+5表格 |
+| 北京大学 | 14页 | 3图表+5表格 |
+| 清华大学 | 13页 | 3图表+4表格 |
+| 浙大城市学院 | 10页 | 3图表+4表格 |
+
+> 📖 完整文档见 [WPS/README.md](WPS/README.md)
+
 ## 许可证
 
 MIT License

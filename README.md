@@ -86,6 +86,32 @@ cli-anything-illustrator export svg output.svg
 
 ---
 
+### 5. WPS PPT 自动化生成 — 5校招生数据全景
+
+**JSON 数据驱动 + 元素类型路由 + WPS COM 即时生成**，全自动制作高质量 PPT。
+
+| 项目 | 主题色 | 页数 | 元素 |
+|------|--------|------|------|
+| 华中科技大学 | `#004098` 蓝 | 9页 | 4图表+5校园图+3表格 |
+| 南方科技大学 | `#006B3F` 绿 | 10页 | 4图表+5表格 |
+| 北京大学 | `#8B0012` 红 | 14页 | 3图表+5表格 |
+| 清华大学 | `#660874` 紫 | 13页 | 3图表+4表格 |
+| 浙大城市学院 | `#005A9C` 蓝 | 10页 | 3图表+4表格 |
+
+```bash
+# 每个项目含三件套：模板底图 + JSON数据 + Python引擎
+cd WPS/南科大
+python build_sustech.py   # WPS可见生成 → PPTX + PDF
+```
+
+**13 种元素类型**：`text` / `image` / `table` / `cards_2x3` / `cards_1x4_info` / `card_list_wide` / `tagline_bar` / `timeline_horiz` 等
+
+**布局规范**：透明卡片不挡背景 · 标题居中无装饰线 · 正文≥22pt · 每页图表+表格≥2种
+
+> 📖 完整文档见 [WPS/README.md](WPS/README.md)
+
+---
+
 ### 4. Photoshop Harness — Adobe Photoshop AI Agent
 
 通过 Windows COM 自动化接口操控 **Adobe Photoshop**，让 AI Agent 直接创建和编辑位图图像。
