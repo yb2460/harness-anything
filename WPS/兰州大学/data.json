@@ -1,0 +1,150 @@
+{
+  "canvas": {"w": 960, "h": 540},
+  "slides": [
+    {
+      "id": 1, "title": "封面",
+      "elements": [
+        {"type": "text", "x": 60, "y": 55, "w": 840, "h": 100, "text": "兰州大学\n扎根西部的百年坚守", "fs": 46, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei", "line_spacing": 1.2},
+        {"type": "text", "x": 60, "y": 200, "w": 840, "h": 40, "text": "胡焕庸线以西唯一985/双一流A类高校  ·  1909-2025  ·  116年薪火相传", "fs": 22, "color": "#555555", "bold": false, "align": 2},
+        {"type": "image", "x": 50, "y": 270, "w": 860, "h": 120, "file": "images/chart_numbers.png"},
+        {"type": "text", "x": 60, "y": 430, "w": 840, "h": 35, "text": "自强不息  ·  独树一帜  ·  坚守  ·  奋斗", "fs": 24, "color": "#C62828", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 490, "w": 840, "h": 25, "text": "做西部文章 · 创一流大学", "fs": 16, "color": "#999999", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 2, "title": "目录",
+      "elements": [
+        {"type": "text", "x": 60, "y": 28, "w": 840, "h": 50, "text": "目  录", "fs": 46, "color": "#333333", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "card_list_wide", "items": [
+          {"num": "01", "title": "胡焕庸线以西", "sub": "中国高等教育版图 · 唯一985/双一流A类高校的坚守"},
+          {"num": "02", "title": "百年历史沿革", "sub": "1909甘肃法政学堂 → 2025双一流 · 116年风雨"},
+          {"num": "03", "title": "先贤精神 · 坚守故事", "sub": "辛树帜 郑国锠 黄文魁 王德基 · 为之于不可为之日"},
+          {"num": "04", "title": "学科实力排名", "sub": "草学A+第1 生态学A+第2 化学A 大气A · 化学9院士"},
+          {"num": "05", "title": "人才坚守 · 孔雀西北流", "sub": "从流失450人到引进520人 · 人才绿洲战略"},
+          {"num": "06", "title": "标志性科研成就", "sub": "嫦娥探月 · 硼中子治疗 · 青藏科考 · 一带一路激光雷达网"},
+          {"num": "07", "title": "校园 · 建筑 · 环境", "sub": "城关684亩 + 榆中2353亩 · 以名山命名的建筑群"},
+          {"num": "08", "title": "毕业生扎根西部", "sub": "60%+留西部 · 100%三甲/名校 · 校友37万+"},
+          {"num": "09", "title": "报考兰大的理由", "sub": "高性价比985 · 保研率高 · 国际交流 · 低生活成本"},
+          {"num": "10", "title": "核心数据总结", "sub": "六大坚守亮点 · 兰大精神"}
+        ], "start_y": 90, "item_h": 44, "gap": 2,
+           "title_color": "#1A1A1A", "sub_color": "#555555"}
+      ]
+    },
+    {
+      "id": 3, "title": "胡焕庸线以西",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 40, "text": "胡焕庸线以西 · 唯一的坚守", "fs": 42, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 55, "w": 540, "h": 430, "file": "images/chart_hexi.png"},
+        {"type": "text", "x": 580, "y": 70, "w": 350, "h": 35, "text": "国家战略定位", "fs": 30, "color": "#C62828", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 580, "y": 115, "w": 350, "h": 160, "text": "■ 胡焕庸线(黑河-腾冲)以西\n   唯一教育部直属全国重点大学\n\n■ 占国土面积一半以上的西部\n   仅此一所985/双一流A类\n\n■ 1947年《兰大校讯》发刊词:\n   「兰州大学是站在文化国防\n    的最前线」", "fs": 17, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.25},
+        {"type": "text", "x": 580, "y": 290, "w": 350, "h": 35, "text": "时代使命", "fs": 30, "color": "#E65100", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 580, "y": 335, "w": 350, "h": 130, "text": "■ 深度参与第二次青藏科考\n■ 承担嫦娥探月工程关键测量\n■ 自主研发硼中子俘获肿瘤装置\n■ 建成「一带一路」激光雷达网\n■ 习近平(2009):\n   「在西北是能办一流大学的」", "fs": 17, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.25}
+      ]
+    },
+    {
+      "id": 4, "title": "百年历史",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 40, "text": "百年坚守 · 独树一帜 (1909-2025)", "fs": 42, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 60, "w": 930, "h": 280, "file": "images/chart_timeline.png"},
+        {"type": "text", "x": 25, "y": 355, "w": 440, "h": 28, "text": "辛树帜校长的建校宣言", "fs": 26, "color": "#C62828", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 25, "y": 390, "w": 440, "h": 100, "text": "1946年,辛树帜受命筹建国立兰州大学。\n内战炮火中,他四处延聘名师、购置图书仪器,\n建起「十大建筑」,使兰大一跃成为拥有\n五个学院的全国性综合大学。\n顾颉刚:「当知屋宇可得而毁,惟此为之于\n不可为之日之精神,则永永不可磨灭者尔!」", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.25},
+        {"type": "text", "x": 490, "y": 355, "w": 440, "h": 28, "text": "校训与精神", "fs": 26, "color": "#E65100", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 490, "y": 390, "w": 440, "h": 100, "text": "校训: 自强不息 独树一帜(2009年确立)\n学风: 勤奋 求实 进取(1986年确立)\n精神: 坚守·奋斗(2019年铜雕落成)\n\n「立足西部、爱国奉献」的自强精神\n「独树一帜、创造一流」的价值追求\n「勤奋、求实、进取」的优良学风\n\n—— 兰大校史研究室主任张克非", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.25}
+      ]
+    },
+    {
+      "id": 5, "title": "先贤故事",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "先贤精神 · 为之于不可为之日", "fs": 40, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 25, "y": 58, "w": 290, "h": 26, "text": "郑国锠 · 「一块玻璃」", "fs": 22, "color": "#C62828", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 25, "y": 90, "w": 290, "h": 200, "text": "1951年留美博士回国，兰大承诺\n「已为你准备好带玻璃窗的宿舍」。\n到校才发现——其他教师都是纸糊\n木窗，唯独他那间中间安了一小块\n玻璃。面对没自来水、没暖气、常\n停电的条件，他说：\n「有困难,不怕；\n 没有条件,创造!」\n此后在兰大工作60余年，当选\n中科院院士，开创细胞生物学。", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "text", "x": 335, "y": 58, "w": 290, "h": 26, "text": "黄文魁 · 翻窗做实验", "fs": 22, "color": "#E65100", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 335, "y": 90, "w": 290, "h": 200, "text": "著名化学家，1955年从复旦调至\n兰大。「文革」期间被禁止科研——\n夜里从化学楼一楼卫生间窗户翻进\n实验室，遮严门窗偷偷做实验，\n天亮前原路返回。\n1972年胃切除术后体重仅70斤，\n主动请缨攻关抗癌新药，在国际上\n率先合成三种三尖杉酯碱，获\n国家自然科学奖。1982年飞机\n事故遇难，双手仍紧抱实验样品。", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "text", "x": 645, "y": 58, "w": 290, "h": 26, "text": "王德基 · 羊皮筏子科考", "fs": 22, "color": "#00695C", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 645, "y": 90, "w": 290, "h": 200, "text": "留德归来的地貌学家，为给兰州\n城市规划和工业建设提供地质依据，\n在没有现代交通工具的1950年代，\n带着学生坐羊皮筏子在黄河上进行\n勘测。一次筏子遇激浪险些倾覆，\n差点落水，此后仍坚持继续。\n硬是靠羊皮筏子把黄河沿岸地形\n地貌弄得清清楚楚，为包兰铁路\n选线提供了第一手资料。\n\n「兰大化学系不成文规定：\n  实验室从不放凳子或椅子」", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "化学系本科校友9位两院院士 = 全国高校各院系第1   |   师生车拉肩挑掘出毓秀湖   |   实验室从不放凳子 — 站着做实验", "color": "#003D5C"}
+      ]
+    },
+    {
+      "id": 6, "title": "学科实力",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "学科实力 · 西北学术高峰", "fs": 42, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 52, "w": 580, "h": 310, "file": "images/chart_ranking.png"},
+        {"type": "image", "x": 350, "y": 365, "w": 580, "h": 155, "file": "images/chart_academicians.png"},
+        {"type": "text", "x": 610, "y": 62, "w": 325, "h": 28, "text": "双一流学科", "fs": 26, "color": "#C62828", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 610, "y": 100, "w": 325, "h": 100, "text": "化学 · 大气科学\n生态学 · 草学\n\n4个学科入选国家\n「双一流」建设名单", "fs": 18, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.35},
+        {"type": "text", "x": 610, "y": 220, "w": 325, "h": 28, "text": "院士师资", "fs": 26, "color": "#E65100", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 610, "y": 258, "w": 325, "h": 90, "text": "两院院士 26人\n博士生导师 700+\n国家杰出青年 80+\n6个国家重点实验室\n5个国家临床医学研究中心", "fs": 18, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.35}
+      ]
+    },
+    {
+      "id": 7, "title": "人才坚守",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "从「孔雀东南飞」到「人才西北流」", "fs": 40, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 52, "w": 930, "h": 270, "file": "images/chart_talent.png"},
+        {"type": "text", "x": 25, "y": 330, "w": 440, "h": 28, "text": "曾经的痛: 孔雀东南飞", "fs": 26, "color": "#C62828", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 25, "y": 365, "w": 440, "h": 120, "text": "1984-1994年，兰大流失教师超过450人\n流传着「流失的人才可以再办一所兰大」\n地理位置的劣势让人才外流成为常态\n\n但留下来的兰大人说:\n「如果为了过舒适的生活,就不用回国」\n—— 郑国锠院士", "fs": 17, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.3},
+        {"type": "text", "x": 490, "y": 330, "w": 440, "h": 28, "text": "现在的转机: 人才西北流", "fs": 26, "color": "#00695C", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 490, "y": 365, "w": 440, "h": 120, "text": "实施「萃英学者」发展计划\n构建西部人才「绿洲」\n2020年以来引进高层次人才520+\n严纯华校长:\n「兰大学子或许不是最机灵的,\n 但大都很踏实、后劲足」\n培育的学生60%+来自西部、留在西部", "fs": 17, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.3},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "从「孔雀东南飞」到「人才西北流」| 萃英学者计划 | 西部人才绿洲 | 60%+毕业生扎根西部", "color": "#003D5C"}
+      ]
+    },
+    {
+      "id": 8, "title": "科研成就",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "标志性科研成就", "fs": 42, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 55, "w": 930, "h": 270, "file": "images/chart_research.png"},
+        {"type": "text", "x": 20, "y": 340, "w": 230, "h": 28, "text": "嫦娥探月", "fs": 22, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 20, "y": 373, "w": 230, "h": 100, "text": "承担嫦娥探月工程\n关键测量任务\n为我国深空探测\n提供核心技术支撑", "fs": 16, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.3},
+        {"type": "text", "x": 265, "y": 340, "w": 190, "h": 28, "text": "硼中子治疗", "fs": 22, "color": "#C62828", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 265, "y": 373, "w": 190, "h": 100, "text": "自主研发硼中子\n俘获肿瘤治疗装置\n癌症治疗新突破\n国际前沿水平", "fs": 16, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.3},
+        {"type": "text", "x": 470, "y": 340, "w": 190, "h": 28, "text": "青藏科考", "fs": 22, "color": "#E65100", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 470, "y": 373, "w": 190, "h": 100, "text": "深度参与第二次\n青藏高原综合\n科学考察研究\n国家级战略任务", "fs": 16, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.3},
+        {"type": "text", "x": 675, "y": 340, "w": 280, "h": 28, "text": "一带一路激光雷达网", "fs": 22, "color": "#00695C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 675, "y": 373, "w": 280, "h": 100, "text": "建成覆盖丝绸之路\n经济带的激光雷达\n观测网络\n服务国家战略需求", "fs": 16, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.3},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "做西部文章  创一流大学  |  把地域特色转化为学科优势  |  国家级科研平台 6 个国家重点实验室", "color": "#003D5C"}
+      ]
+    },
+    {
+      "id": 9, "title": "校园环境",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "两大校区 · 建筑 · 环境", "fs": 42, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 52, "w": 930, "h": 280, "file": "images/chart_campus.png"},
+        {"type": "image", "x": 15, "y": 345, "w": 930, "h": 140, "file": "images/chart_buildings.png"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "前两年清华园(海淀) + 后六年东单(协和)  两校资源兼得  ·  八年制毕业生100%三甲医院就业", "color": "#003D5C"}
+      ]
+    },
+    {
+      "id": 10, "title": "毕业生扎根西部",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "毕业生扎根西部 · 桃李满天下", "fs": 40, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 55, "w": 430, "h": 350, "file": "images/chart_graduate.png"},
+        {"type": "text", "x": 470, "y": 70, "w": 460, "h": 28, "text": "37万+校友 · 60%扎根西部", "fs": 28, "color": "#C62828", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 470, "y": 115, "w": 460, "h": 220, "text": "◆ 建校以来培养37万余名毕业生\n   60%以上来自西部和农村\n   毕业后仍留在西部工作\n\n◆ 在全国重点大学中\n   兰大是与西部关系最密切\n   贡献最直接的高校\n\n◆ 毕业生遍布各行各业:\n   两院院士、大学校长、医院院长\n   科研骨干、基层干部、中学教师\n\n◆ 甘肃省内约70%的\n   医疗卫生骨干为兰大校友\n   约60%的中学校长为兰大毕业生\n\n◆ 榆中校区立有铜雕:\n   「坚守·奋斗」", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "37万校友遍布全球  60%+留西部  甘肃70%医疗骨干为兰大校友  铜雕: 坚守·奋斗", "color": "#003D5C"}
+      ]
+    },
+    {
+      "id": 11, "title": "核心总结",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "六大坚守 · 兰大精神", "fs": 44, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "cards_2x3", "items": [
+          {"title": "地理坚守", "desc": "胡焕庸线以西唯一985\n占国土一半以上区域的\n高等教育旗帜与堡垒", "color": "#003D5C"},
+          {"title": "历史坚守", "desc": "1909-2025 跨越116年\n从甘肃法政学堂到双一流\n见证中国高等教育发展史", "color": "#C62828"},
+          {"title": "人才坚守", "desc": "从孔雀东南飞到人才西北流\n流失450人 → 引进520人\n60%+毕业生扎根西部", "color": "#E65100"},
+          {"title": "学术坚守", "desc": "草学A+第1 生态学A+第2\n化学9位本科院士校友\n全国高校各院系并列第一", "color": "#00695C"},
+          {"title": "精神坚守", "desc": "辛树帜 郑国锠 黄文魁\n「为之于不可为之日」\n实验室从不放凳子", "color": "#1A6B8A"},
+          {"title": "使命坚守", "desc": "青藏科考 嫦娥探月\n一带一路激光雷达网\n做西部文章 创一流大学", "color": "#B8860B"}
+        ], "start_y": 55}
+      ]
+    },
+    {
+      "id": 12, "title": "致谢",
+      "elements": [
+        {"type": "text", "x": 60, "y": 100, "w": 840, "h": 70, "text": "自强不息  ·  独树一帜", "fs": 50, "color": "#003D5C", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 220, "w": 840, "h": 120, "text": "兰州大学 · 扎根西部的百年坚守\n\n数据来源: 兰州大学官网 · 经济日报 · 光明日报 · 甘肃政协文史馆\nWikipedia Commons · 教育部学科评估 · 各省教育考试院\n网络收集版仅供参考 · 请以官方发布为准", "fs": 22, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.6},
+        {"type": "text", "x": 60, "y": 475, "w": 840, "h": 30, "text": "2026年6月  ·  Claude Code + WPS COM 生成", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    }
+  ]
+}
