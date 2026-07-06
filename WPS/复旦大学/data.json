@@ -1,0 +1,75 @@
+{
+  "canvas": {"w": 960, "h": 540},
+  "slides": [
+    {
+      "id": 1, "title": "封面",
+      "elements": [
+        {"type": "text", "x": 60, "y": 80, "w": 840, "h": 120, "text": "肝癌免疫微环境亚型\n与中性粒细胞异质性", "fs": 44, "color": "#003366", "bold": true, "align": 2, "font": "SimHei", "line_spacing": 1.3},
+        {"type": "text", "x": 60, "y": 230, "w": 840, "h": 60, "text": "Xue R, Zhang Q, Cao Q, et al.\nNature, 2022 Dec; 612: 141-147", "fs": 22, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.4},
+        {"type": "text", "x": 60, "y": 340, "w": 840, "h": 80, "text": "北京大学第一医院 · 北京大学生物医学前沿创新中心\n单细胞测序解析肝癌TIME · TIMELASER分型体系", "fs": 20, "color": "#777777", "bold": false, "align": 2, "line_spacing": 1.5}
+      ]
+    },
+    {
+      "id": 2, "title": "研究背景与设计",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "研究背景与实验设计", "fs": 44, "color": "#003366", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 50, "y": 72, "w": 420, "h": 200, "text": "科学问题\n■ TIME异质性是转移/复发/耐药主因\n■ 肝癌TIME亚型与临床关联不明\n■ 中性粒细胞在肝癌中作用不清\n\n研究策略\n■ 大规模单细胞测序（scRNA-seq）\n■ 多组学整合（WES + 空间组学）\n■ 体外功能验证 + 小鼠模型\n\n样本规模\n■ 189例样本（124患者 + 8小鼠）\n■ >100万细胞分析\n■ 涵盖HCC/ICC/CHC等亚型", "fs": 18, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "text", "x": 510, "y": 72, "w": 420, "h": 200, "text": "技术路线\n\nscRNA-seq (10× Genomics)\n    ↓\n细胞聚类 → 5个细胞模块(CM1-5)\n    ↓\nTIMELASER五亚型分类\n    ↓\n  整合分析\n┌────────┼────────┐\n趋化因子  基因组  空间组学\n    ↓\n  聚焦中性粒细胞\n    ↓\n体外诱导 + 小鼠验证", "fs": 18, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2}
+      ]
+    },
+    {
+      "id": 3, "title": "Fig 1: 细胞图谱",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 36, "text": "Fig 1  肝癌单细胞转录组图谱", "fs": 38, "color": "#003366", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 52, "w": 900, "h": 440, "file": "figures/fig1.png"},
+        {"type": "text", "x": 30, "y": 495, "w": 900, "h": 35, "text": "scRNA-seq揭示肝癌89个细胞亚群  ·  包含T/NK/髓系/基质/肿瘤细胞  ·  肿瘤组织中免疫细胞组成显著改变", "fs": 16, "color": "#555555", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 4, "title": "Fig 2: TIMELASER",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 36, "text": "Fig 2  TIMELASER 五亚型分类体系", "fs": 38, "color": "#003366", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 52, "w": 900, "h": 440, "file": "figures/fig2.png"},
+        {"type": "text", "x": 30, "y": 495, "w": 900, "h": 35, "text": "TIME-IA(免疫激活) · TIME-ISM(髓系抑制) · TIME-ISS(基质抑制) · TIME-IE(免疫排斥) · TIME-IR(免疫驻留)", "fs": 16, "color": "#555555", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 5, "title": "Fig 3: 中性粒细胞",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 36, "text": "Fig 3  中性粒细胞异质性与TAN功能", "fs": 38, "color": "#003366", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 52, "w": 900, "h": 440, "file": "figures/fig3.png"},
+        {"type": "text", "x": 30, "y": 495, "w": 900, "h": 35, "text": "11个中性粒细胞亚群  ·  CCL4+ TAN招募巨噬细胞  ·  PD-L1+ TAN抑制T细胞毒性  ·  富集于TIME-ISM亚型", "fs": 16, "color": "#555555", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 6, "title": "Fig 4: 小鼠验证",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 36, "text": "Fig 4  小鼠模型验证与中性粒细胞耗竭治疗", "fs": 38, "color": "#003366", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 52, "w": 900, "h": 440, "file": "figures/fig4.png"},
+        {"type": "text", "x": 30, "y": 495, "w": 900, "h": 35, "text": "抗Ly6G清除中性粒细胞 → 肝癌结节↓ 肿瘤重量↓ → 巨噬细胞招募↓ T细胞抑制↓ → 肿瘤消退", "fs": 16, "color": "#555555", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 7, "title": "核心发现总结",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "核心发现与临床意义", "fs": 44, "color": "#003366", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "cards_2x3", "items": [
+          {"title": "TIMELASER体系", "desc": "5种TIME亚型\n首次单细胞精度分类\n免疫激活/抑制/排斥/驻留", "color": "#003366"},
+          {"title": "中性粒细胞谱系", "desc": "11个亚群 3种TAN\nCCL4+招募巨噬细胞\nPD-L1+抑制T细胞", "color": "#1A5276"},
+          {"title": "趋化因子网络", "desc": "CXCL9/10→TIME-IA\nCCL4/CCL3→TIME-ISM\n驱动TIME空间组织", "color": "#B8860B"},
+          {"title": "基因组关联", "desc": "TP53/CTNNB1/KRAS\n突变与TIME亚型相关\n揭示驱动基因免疫效应", "color": "#8B0000"},
+          {"title": "治疗新靶点", "desc": "TAN清除抑制肿瘤\nCCL4+/PD-L1+ TAN\n联合ICIs治疗前景", "color": "#2E7D32"},
+          {"title": "数据资源", "desc": ">100万细胞数据公开\nTIMELASER特征基因集\n可用于Bulk数据分型", "color": "#4A148C"}
+        ], "start_y": 68}
+      ]
+    },
+    {
+      "id": 8, "title": "致谢",
+      "elements": [
+        {"type": "text", "x": 60, "y": 130, "w": 840, "h": 80, "text": "谢  谢", "fs": 52, "color": "#003366", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 240, "w": 840, "h": 120, "text": "Xue R, Zhang Q, Cao Q, et al.\nLiver tumour immune microenvironment subtypes\nand neutrophil heterogeneity\nNature, 2022; 612: 141-147\nDOI: 10.1038/s41586-022-05400-x", "fs": 22, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.5},
+        {"type": "text", "x": 60, "y": 480, "w": 840, "h": 30, "text": "2026年6月  ·  Claude Code + WPS COM 生成", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    }
+  ]
+}
