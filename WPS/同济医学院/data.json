@@ -1,0 +1,150 @@
+{
+  "canvas": {"w": 960, "h": 540},
+  "slides": [
+    {
+      "id": 1, "title": "封面",
+      "elements": [
+        {"type": "text", "x": 60, "y": 55, "w": 840, "h": 105, "text": "华中科技大学同济医学院\n百年医学传承", "fs": 46, "color": "#C41230", "bold": true, "align": 2, "font": "SimHei", "line_spacing": 1.3},
+        {"type": "text", "x": 60, "y": 210, "w": 840, "h": 35, "text": "从上海德文医学堂 → 同济医科大学 → 华科同济医学院 · 1907-2025", "fs": 21, "color": "#555555", "bold": false, "align": 2},
+        {"type": "image", "x": 50, "y": 270, "w": 860, "h": 115, "file": "images/chart_numbers.png"},
+        {"type": "text", "x": 60, "y": 430, "w": 840, "h": 35, "text": "同舟共济  ·  明德厚学  ·  求是创新", "fs": 22, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 490, "w": 840, "h": 25, "text": "教育部直属  ·  985工程  ·  双一流A类  ·  10所附属医院  ·  9个国家重点学科", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 2, "title": "目录",
+      "elements": [
+        {"type": "text", "x": 60, "y": 28, "w": 840, "h": 48, "text": "目  录", "fs": 46, "color": "#333333", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "card_list_wide", "items": [
+          {"num": "01", "title": "同济源起 · 上海时期", "sub": "1907上海德文医学堂 → 国立同济大学医学院 → 内迁武汉"},
+          {"num": "02", "title": "华科前身 · 华中工学院", "sub": "1952年建校 → 华中理工大学 → 工科强校崛起"},
+          {"num": "03", "title": "合并前夕 · 两校对比", "sub": "同济医科大学 vs 华中理工大学核心数据对比"},
+          {"num": "04", "title": "2000年 · 四校合并", "sub": "同济医科 + 华中理工 + 武汉城建 + 干部管理学院 → 华中科技大学"},
+          {"num": "05", "title": "合并后学科实力", "sub": "公共卫生A+第1 · 生物医学工程A+第2 · 临床医学A"},
+          {"num": "06", "title": "附属医院体系", "sub": "10所临床学院 · 协和1866 · 同济1900 · 床位11000+"},
+          {"num": "07", "title": "科研跨越式发展", "sub": "NSFC连续8年350+项 · 累计经费48亿 · 国家科技奖30+项"},
+          {"num": "08", "title": "国际排名 · ESI学科", "sub": "12个学科ESI前1% · 6个前1‰ · THE世界医学第100位"},
+          {"num": "09", "title": "人才培养 · 杰出校友", "sub": "9万+毕业生 · 吴孟超 裘法祖 侯云德 张定宇"},
+          {"num": "10", "title": "核心数据总结", "sub": "六大合并亮点 · 百年医学传承"}
+        ], "start_y": 90, "item_h": 43, "gap": 2,
+           "title_color": "#1A1A1A", "sub_color": "#555555"}
+      ]
+    },
+    {
+      "id": 3, "title": "同济源起",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "同济源起", "fs": 40, "color": "#C41230", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 70, "w": 930, "h": 425, "file": "images/chart_timeline.png"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "1907年宝隆博士创办上海德文医学堂 → 1927年国立同济大学医学院 → 抗战西迁 → 1951年内迁武汉", "color": "#C41230"}
+      ]
+    },
+    {
+      "id": 4, "title": "华科前身",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "华科前身", "fs": 38, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 30, "y": 72, "w": 280, "h": 30, "text": "华中理工大学", "fs": 26, "color": "#004098", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 30, "y": 112, "w": 280, "h": 180, "text": "■ 1952年 全国院系调整建校\n   原名「华中工学院」\n\n■ 1960年 确定为全国重点高校\n\n■ 1988年 更名为\n   「华中理工大学」\n\n■ 1995年 首批进入211工程\n\n■ 2000年 合并前已是\n   工科实力全国前10\n   拥有31个博士点\n   3位两院院士", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "text", "x": 340, "y": 72, "w": 280, "h": 30, "text": "武汉城市建设学院", "fs": 26, "color": "#007A6E", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 340, "y": 112, "w": 280, "h": 180, "text": "■ 1952年建校\n   新中国第一所\n   城市建设高等学校\n\n■ 建设部直属高校\n\n■ 城市规划、土木工程\n   给排水、建筑学\n   实力雄厚\n\n■ 2000年合并时\n   拥有完整的\n   城市建设学科体系", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "text", "x": 650, "y": 72, "w": 280, "h": 30, "text": "同济医科大学", "fs": 26, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 650, "y": 112, "w": 280, "h": 180, "text": "■ 前身1907年上海德文医学堂\n   中国最早的现代医学院之一\n\n■ 1951年 内迁武汉\n   组建「中南同济医学院」\n\n■ 1955年 更名为武汉医学院\n\n■ 1985年 更名为同济医科大学\n   裘法祖任名誉校长\n\n■ 合并前拥有:\n   4个国家重点学科\n   3所附属医院", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "三所高校各有特色  合并前均已具备雄厚实力  2000年合并实现工科+医科+城建「1+1+1>3」", "color": "#004098"}
+      ]
+    },
+    {
+      "id": 5, "title": "合并前夕",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "合并前夕", "fs": 40, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "table", "x": 30, "y": 72, "w": 430, "h": 300, "rows": 9, "cols": 3,
+         "header_color": "#C41230", "th_fs": 15, "td_fs": 14,
+         "data": [
+           ["指标","同济医科大学","华中理工大学"],
+           ["建校","1907年","1952年"],
+           ["类型","医科大学","工科大学"],
+           ["博士点","31个","29个"],
+           ["国家重点学科","4个","4个"],
+           ["两院院士","3人","3人"],
+           ["附属医院","3所","—"],
+           ["ESI前1%学科","2个","3个"],
+           ["在校生","~8000人","~25000人"]
+        ]},
+        {"type": "text", "x": 490, "y": 72, "w": 440, "h": 30, "text": "合并背后的关键抉择", "fs": 28, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 490, "y": 118, "w": 440, "h": 250, "text": "◆ 同济医大最初谈判对象\n   是武汉大学而非华中理工\n\n◆ 同济医大坚持保留「同济」品牌\n   和相对独立的管理架构\n\n◆ 华科承诺: 医学院相对独立\n   「同济医学院」名称保留\n   对外代表全校医科\n\n◆ 2000年5月26日 三方签署协议:\n   同济医科大学 +\n   华中理工大学 +\n   武汉城市建设学院\n   → 华中科技大学\n\n◆ 被公认为中国高校合并\n   最成功的案例之一", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.25},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "合并的本质: 工科强校 + 医学名校 + 城建特色 = 综合性研究型大学的完整拼图", "color": "#004098"}
+      ]
+    },
+    {
+      "id": 6, "title": "四校合并",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "四校合并", "fs": 40, "color": "#C8922A", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 62, "w": 930, "h": 310, "file": "images/chart_merge.png"},
+        {"type": "image", "x": 50, "y": 385, "w": 860, "h": 115, "file": "images/chart_compare.png"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "合并后博士点31→48  国家重点学科4→9  两院院士3→8  ESI学科2→12  科研经费0.8亿→8.5亿", "color": "#C8922A"}
+      ]
+    },
+    {
+      "id": 7, "title": "学科实力",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "学科实力", "fs": 40, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 68, "w": 560, "h": 310, "file": "images/chart_ranking.png"},
+        {"type": "text", "x": 600, "y": 80, "w": 335, "h": 30, "text": "双一流建设学科", "fs": 26, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 600, "y": 125, "w": 335, "h": 120, "text": "基础医学\n临床医学\n公共卫生与预防医学\n\n三大医学核心学科\n全部入选国家双一流\n建设名单", "fs": 17, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.35},
+        {"type": "text", "x": 600, "y": 270, "w": 335, "h": 30, "text": "国家重点学科", "fs": 26, "color": "#C8922A", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 600, "y": 310, "w": 335, "h": 100, "text": "9个国家重点学科\n5个国家重点(培育)学科\n83个国家临床重点专科\n11个博士学位授权一级学科\n6个博士后科研流动站", "fs": 17, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.35},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "公共卫生A+全国第1  生物医学工程A+全国第2  临床医学A  5个A类学科  12个ESI前1%", "color": "#004098"}
+      ]
+    },
+    {
+      "id": 8, "title": "附属医院",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "附属医院", "fs": 40, "color": "#C41230", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 60, "w": 940, "h": 325, "file": "images/chart_hospitals.png"},
+        {"type": "text", "x": 30, "y": 395, "w": 440, "h": 30, "text": "协和医院 (1866年建院)", "fs": 24, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 30, "y": 432, "w": 440, "h": 60, "text": "编制床位6000张 · 10个国家重点学科\n25个国家临床重点专科 · 年接诊670万人次\n全国医院综合排名前十 · 绩效考核A+", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "text", "x": 490, "y": 395, "w": 440, "h": 30, "text": "同济医院 (1900年建院)", "fs": 24, "color": "#004098", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 490, "y": 432, "w": 440, "h": 60, "text": "编制床位5000张 · 中部地区顶级综合性三甲\n宝隆博士创办 · 百年传承\n中部疑难重症救治中心", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "10所临床学院  总床位11000+  协和(1866) + 同济(1900) = 两所百年名院  中部顶级医疗集群", "color": "#C41230"}
+      ]
+    },
+    {
+      "id": 9, "title": "科研成就",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "科研成就", "fs": 40, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 58, "w": 930, "h": 260, "file": "images/chart_research.png"},
+        {"type": "image", "x": 15, "y": 325, "w": 930, "h": 140, "file": "images/chart_esi.png"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "NSFC连续8年350+项  累计科研经费48亿  国家科技奖30+项  200+项国家级重大科研项目", "color": "#004098"}
+      ]
+    },
+    {
+      "id": 10, "title": "国际声誉",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "国际声誉", "fs": 40, "color": "#004098", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 62, "w": 930, "h": 240, "file": "images/chart_intl_rank.png"},
+        {"type": "image", "x": 15, "y": 315, "w": 930, "h": 175, "file": "images/chart_alumni.png"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "THE世界医学第100  QS医学第104  U.S. News 3学科世界前50  培养9万+医药卫生人才", "color": "#004098"}
+      ]
+    },
+    {
+      "id": 11, "title": "核心总结",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "核心总结", "fs": 42, "color": "#C41230", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "cards_2x3", "items": [
+          {"title": "百年根脉", "desc": "1907上海德文医学堂\n中国最早的现代医学院\n118年不间断的医学传承\n同济品牌 · 历久弥新", "color": "#C41230"},
+          {"title": "合并典范", "desc": "2000年四校合并\n工科+医科+城建完美互补\n「1+1+1>3」的协同效应\n中国高教合并最佳案例", "color": "#004098"},
+          {"title": "学科高峰", "desc": "公共卫生A+全国第1\n生物医学工程A+全国第2\n临床医学A · 12个ESI前1%\n6个学科入全球前1‰", "color": "#C8922A"},
+          {"title": "临床重镇", "desc": "10所附属医院 · 床位11000+\n协和1866 · 同济1900\n年接诊超1000万人次\n中部顶级医疗集群", "color": "#007A6E"},
+          {"title": "科研引擎", "desc": "NSFC连续8年350+项\n累计到账经费48亿\n国家科技奖30+项\n200+国家级重大项目", "color": "#E0682A"},
+          {"title": "人才辈出", "desc": "9万+医药卫生人才\n吴孟超 · 裘法祖 · 侯云德\n张定宇「人民英雄」\n毕业生遍布全球", "color": "#6B2D5C"}
+        ], "start_y": 55}
+      ]
+    },
+    {
+      "id": 12, "title": "致谢",
+      "elements": [
+        {"type": "text", "x": 60, "y": 100, "w": 840, "h": 80, "text": "同舟共济  ·  明德厚学  ·  求是创新", "fs": 44, "color": "#C41230", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 230, "w": 840, "h": 150, "text": "华中科技大学同济医学院\n从上海德文医学堂到华科同济医学院\n1907—2025 · 118年医学传承\n\n数据来源: 华中科技大学官网 · 同济医学院官网 · 教育部学科评估\nWikipedia · THE/QS/U.S.News排名 · 国家自然科学基金委\n网络收集版仅供参考 · 请以官方发布为准", "fs": 20, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.6},
+        {"type": "text", "x": 60, "y": 480, "w": 840, "h": 30, "text": "2026年6月  ·  Claude Code + WPS COM 生成", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    }
+  ]
+}
