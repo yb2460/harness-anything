@@ -1,0 +1,197 @@
+{
+  "canvas": {"w": 960, "h": 540},
+  "slides": [
+    {
+      "id": 1, "title": "封面",
+      "elements": [
+        {"type": "text", "x": 60, "y": 55, "w": 840, "h": 70, "text": "中山大学", "fs": 52, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 160, "w": 840, "h": 35, "text": "2025年本科招生数据全景", "fs": 26, "color": "#555555", "bold": false, "align": 2},
+        {"type": "image", "x": 50, "y": 240, "w": 860, "h": 90, "file": "images/chart_numbers.png"},
+        {"type": "text", "x": 60, "y": 410, "w": 840, "h": 35, "text": "华南第一学府  ·  三校区五校园  ·  粤港澳大湾区核心", "fs": 24, "color": "#B2062E", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 485, "w": 840, "h": 25, "text": "孙中山先生1924年创办  ·  985/211/双一流A类  ·  63个专业  ·  招生≈7,845人", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 2, "title": "目录",
+      "elements": [
+        {"type": "text", "x": 60, "y": 22, "w": 840, "h": 45, "text": "目  录", "fs": 46, "color": "#333333", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "card_list_wide", "start_y": 82, "item_h": 35, "gap": 1, "items": [
+          {"num": "01", "title": "学校概况", "sub": "孙中山创办 · 三校区五校园 · 985/双一流A类 · 华南第一学府"},
+          {"num": "02", "title": "招生总览", "sub": "≈7,845人 · 63个专业 · 广东3,091人(40%) · 五校园分布"},
+          {"num": "03", "title": "物理类分数", "sub": "16省普通类 · 河南654分最高 · 广东628分 · 多省640+"},
+          {"num": "04", "title": "历史类分数", "sub": "16省普通类 · 内蒙古643分最高 · 广东623分 · 多省630+"},
+          {"num": "05", "title": "热门专业", "sub": "临八663 · 口腔5+3 657 · 计算机657 · AI 651 · 电子650"},
+          {"num": "06", "title": "广东本省", "sub": "招生3,091人(40%) · 物理628起 · 历史623起 · 8个专业组"},
+          {"num": "07", "title": "各省名额", "sub": "10省招生计划 · 广东3091 · 河南238 · 广西225 · 江西202"},
+          {"num": "08", "title": "三校区五校园", "sub": "广州(南·北·东) + 珠海 + 深圳 · 各校区招生分布"},
+          {"num": "09", "title": "985高校对比", "sub": "中大 vs 复旦 vs 浙大 · 8省物理类分数线对比"},
+          {"num": "10", "title": "校园环境", "sub": "红砖绿瓦 · 珠江之畔 · 珠海海滨 · 深圳光明"},
+          {"num": "11", "title": "选科与政策", "sub": "临八/计算机/口腔需物化 · 双学位项目 · 转专业"},
+          {"num": "12", "title": "报考指南", "sub": "招生代码 · 志愿批次 · 学费标准 · 奖助学金"},
+          {"num": "13", "title": "数据总结", "sub": "六大报考亮点 · 博学 审问 慎思 明辨 笃行"}
+        ]}
+      ]
+    },
+    {
+      "id": 3, "title": "学校概况",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "学校概况", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 78, "w": 320, "h": 210, "file": "images/image3.jpeg"},
+        {"type": "text", "x": 370, "y": 80, "w": 270, "h": 28, "text": "华南第一学府", "fs": 26, "color": "#00663D", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 370, "y": 118, "w": 270, "h": 170, "text": "■ 1924年孙中山先生创办\n■ 985工程 · 211工程\n   双一流A类建设高校\n■ 三校区五校园\n   广州(南·北·东)\n   珠海 · 深圳\n■ QS世界排名第267位\n■ 20个学科ESI全球前1%\n   5个学科ESI前1‰\n■ 11个双一流建设学科", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.15},
+        {"type": "image", "x": 660, "y": 78, "w": 270, "h": 180, "file": "images/image4.jpeg"},
+        {"type": "image", "x": 30, "y": 310, "w": 900, "h": 90, "file": "images/image12.png"},
+        {"type": "text", "x": 30, "y": 410, "w": 900, "h": 30, "text": "博学 审问 慎思 明辨 笃行  —  中山大学校训  —  华南地区人才培养和科学研究的最高学府", "fs": 16, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "1924年孙中山创办 · 985/双一流A类 · 三校区五校园 · QS世界267位 · 11个双一流学科 · 20个ESI前1%", "color": "#00663D"}
+      ]
+    },
+    {
+      "id": 4, "title": "招生总览",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "招生总览", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 78, "w": 560, "h": 290, "file": "images/chart_pie.png"},
+        {"type": "image", "x": 590, "y": 78, "w": 340, "h": 210, "file": "images/chart_campus.png"},
+        {"type": "text", "x": 590, "y": 305, "w": 340, "h": 180, "text": "2025年招生关键数据:\n\n◆ 总计划≈7,845人(内地)\n\n◆ 面向29个省市招生\n\n◆ 63个本科招生专业\n\n◆ 广东省3,091人\n   占总计划约40%\n\n◆ 理工/信息类占比最大\n   约3,200人(41%)\n\n◆ 医学类紧随其后\n   约2,100人(27%)", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.15},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "≈7,845人 · 29省市 · 63个专业 · 广东3,091人(40%) · 理工41% + 医学27% · 五校园分布", "color": "#00663D"}
+      ]
+    },
+    {
+      "id": 5, "title": "物理类",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "物理类", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 78, "w": 940, "h": 355, "file": "images/chart_physics.png"},
+        {"type": "text", "x": 30, "y": 445, "w": 900, "h": 45, "text": "物理类需全省前1000-10000名  河南654(位次6779)  广东628(位次10616)  关键分界线≈640", "fs": 16, "color": "#555555", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 6, "title": "历史类",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "历史类", "fs": 40, "color": "#B2062E", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 78, "w": 940, "h": 340, "file": "images/chart_history.png"},
+        {"type": "text", "x": 30, "y": 430, "w": 900, "h": 60, "text": "历史类需全省前200-1500名  内蒙古643分(位次217)  广东623分(位次1590)  关键分界线≈635", "fs": 16, "color": "#555555", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 7, "title": "热门专业",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "热门专业", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 78, "w": 580, "h": 300, "file": "images/chart_majors.png"},
+        {"type": "image", "x": 615, "y": 80, "w": 160, "h": 120, "file": "images/image6.jpeg"},
+        {"type": "text", "x": 615, "y": 215, "w": 315, "h": 28, "text": "王牌专业速览", "fs": 24, "color": "#B2062E", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 615, "y": 255, "w": 315, "h": 160, "text": "◆ 临床医学(八年制): 663分\n   本博连读 · 院士授课\n\n◆ 口腔医学(5+3): 657分\n   一体化培养 · 执医直通\n\n◆ 计算机类(广州): 657分\n   含AI · 软工 · 信安\n\n◆ 数学类(广州): 651分\n   双一流学科 · 拔尖计划\n\n◆ 所有王牌专业\n   均要求物理+化学", "fs": 14, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.1},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "临八663分(位次1701)  口腔5+3 657  计算机657  AI 651  物化必选  广东考生优势明显", "color": "#00663D"}
+      ]
+    },
+    {
+      "id": 8, "title": "广东本省",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "广东本省", "fs": 40, "color": "#B2062E", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 30, "y": 78, "w": 420, "h": 28, "text": "广东3,091人 · 占全国40%", "fs": 26, "color": "#B2062E", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 30, "y": 118, "w": 420, "h": 120, "text": "■ 广东考生录取分和位次门槛\n   相对其他省份较低\n\n■ 广东生源占全国约40%\n   享有最大的录取倾斜\n\n■ 物理类设8个专业组\n   最低628(位次10616)\n\n■ 历史类设4个专业组\n   最低623(位次1590)\n\n■ 临八663 · 口腔5+3 657\n   计算机657 · AI 651", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.15},
+        {"type": "table", "x": 480, "y": 78, "w": 450, "h": 240, "rows": 9, "cols": 3, "header_color": "#00663D", "th_fs": 13, "td_fs": 12,
+         "data": [
+           ["广东物理类专业组","最低分","位次"],
+           ["216(临八/口腔等)","651","3575"],
+           ["215(计算机/数学)","647","4264"],
+           ["214(电子/自动化)","642","5517"],
+           ["217(生物/化学)","639","6467"],
+           ["218(材料/环境)","633","8536"],
+           ["212(经管/法学)","631","9390"],
+           ["213(人文社科)","629","9936"],
+           ["219(最低组)","628","10616"]
+        ]},
+        {"type": "image", "x": 30, "y": 330, "w": 420, "h": 100, "file": "images/image11.jpeg"},
+        {"type": "text", "x": 480, "y": 335, "w": 450, "h": 100, "text": "广东考生报考建议:\n630分+可尝试冲临八/口腔/计算机\n620分+可稳报经管/法学等热门\n610分+历史类优势明显\n建议参考近三年位次而非绝对分数", "fs": 16, "color": "#00663D", "bold": true, "align": 1, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "广东3,091人(40%)  物理628起  历史623起  8个专业组  临八663最高  广东考生最有优势", "color": "#B2062E"}
+      ]
+    },
+    {
+      "id": 9, "title": "各省名额",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "各省名额", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 78, "w": 940, "h": 300, "file": "images/chart_province.png"},
+        {"type": "text", "x": 25, "y": 395, "w": 910, "h": 95, "text": "广东省绝对主力3,091人(40%)  河南238人 · 广西225人 · 江西202人  浙江/江苏各100人\n一线城市名额相对较少(北京45 · 上海39)  建议广东考生充分利用本省优势", "fs": 16, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.3}
+      ]
+    },
+    {
+      "id": 10, "title": "五校园",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "五校园", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 78, "w": 300, "h": 200, "file": "images/image5.jpeg"},
+        {"type": "image", "x": 330, "y": 78, "w": 300, "h": 200, "file": "images/image10.jpeg"},
+        {"type": "image", "x": 645, "y": 78, "w": 300, "h": 200, "file": "images/image13.jpeg"},
+        {"type": "text", "x": 15, "y": 288, "w": 300, "h": 28, "text": "广州校区南校园", "fs": 20, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 15, "y": 320, "w": 300, "h": 70, "text": "校本部 · 红砖绿瓦\n人文社科+理科基地\n百年康乐园\n珠江畔最美校园", "fs": 15, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.2},
+        {"type": "text", "x": 330, "y": 288, "w": 300, "h": 28, "text": "珠海校区", "fs": 20, "color": "#1565C0", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 330, "y": 320, "w": 300, "h": 70, "text": "海滨校区 · 依山傍海\n海洋科学 · 大气科学\n国际关系 · 旅游学院\n亚洲最长教学楼", "fs": 15, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.2},
+        {"type": "text", "x": 645, "y": 288, "w": 300, "h": 28, "text": "深圳校区", "fs": 20, "color": "#E65100", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 645, "y": 320, "w": 300, "h": 70, "text": "光明科学城 · 最新校区\n新工科 · 新医科\n生物医学工程 · 药学\n深圳先行示范区红利", "fs": 15, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "三校区五校园 · 广州(南·北·东) + 珠海 + 深圳 · 粤港澳大湾区 · 招生覆盖全校区", "color": "#00663D"}
+      ]
+    },
+    {
+      "id": 11, "title": "985对比",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "985对比", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 78, "w": 940, "h": 310, "file": "images/chart_c9.png"},
+        {"type": "text", "x": 25, "y": 402, "w": 910, "h": 85, "text": "中山大学在广东本地有绝对分数优势(628分 vs 复旦678/浙大675)  在省外约低于复旦30-50分\n对广东考生性价比极高: 以相对低的分数享受顶级985资源  省外考生需640+才能稳录", "fs": 16, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.3}
+      ]
+    },
+    {
+      "id": 12, "title": "校园环境",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "校园环境", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 25, "y": 78, "w": 290, "h": 200, "file": "images/image15.jpeg"},
+        {"type": "image", "x": 335, "y": 78, "w": 290, "h": 200, "file": "images/image16.jpeg"},
+        {"type": "image", "x": 645, "y": 78, "w": 290, "h": 200, "file": "images/image8.jpeg"},
+        {"type": "text", "x": 25, "y": 295, "w": 290, "h": 100, "text": "南校园 · 怀士堂\n孙中山先生曾在此\n演讲「立志做大事」\n中山大学精神象征", "fs": 15, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.3},
+        {"type": "text", "x": 335, "y": 295, "w": 290, "h": 100, "text": "东校园 · 图书馆\n现代化学习空间\n24小时自习区\n藏书量超过700万册", "fs": 15, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.3},
+        {"type": "text", "x": 645, "y": 295, "w": 290, "h": 100, "text": "珠海校区 · 海琴楼\n亚洲最长教学楼之一\n面朝大海 · 春暖花开\n粤港澳大湾区西岸明珠", "fs": 15, "color": "#333333", "bold": false, "align": 2, "line_spacing": 1.3},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "红砖绿瓦 · 珠江畔百年康乐园 · 珠海海滨 · 深圳光明科学城 · 三校区五校园各具特色", "color": "#00663D"}
+      ]
+    },
+    {
+      "id": 13, "title": "选科政策",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 40, "text": "选科政策", "fs": 40, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "table", "x": 30, "y": 78, "w": 460, "h": 260, "rows": 8, "cols": 2, "header_color": "#00663D", "th_fs": 14, "td_fs": 13,
+         "data": [
+           ["选科组合","可报考专业范围"],
+           ["物理+化学+生物","全部理工/医学/经管"],
+           ["物理+化学","90%以上理工医学专业"],
+           ["物理+不限","经管/部分理工"],
+           ["历史+政治","法学/马理论/中文"],
+           ["历史+不限","人文社科/外语/经管"],
+           ["必选化学专业","临八/口腔/药学"],
+           ["必选物理专业","计算机/AI/电子信息"]
+        ]},
+        {"type": "text", "x": 515, "y": 80, "w": 420, "h": 28, "text": "2025招生政策要点", "fs": 24, "color": "#B2062E", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 515, "y": 118, "w": 420, "h": 200, "text": "◆ 招生代码: 10558\n\n◆ 王牌专业(临八/口腔/计算机)\n   必须物理+化学\n\n◆ 50+双学士学位项目\n\n◆ 校内转专业机会\n   大一/大二各有一次申请\n\n◆ 学费标准:\n   普通类6,060-6,850元/年\n   医学类7,660元/年\n   软件工程8,000元/年\n\n◆ 新生奖学金:\n   全省前100名全额奖学金\n   全省前500名半额奖学金", "fs": 14, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.1},
+        {"type": "image", "x": 30, "y": 360, "w": 900, "h": 65, "file": "images/image9.jpeg"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "王牌专业物化必选 · 50+双学士学位 · 大一大二各有转专业机会 · 全省前500奖学金", "color": "#00663D"}
+      ]
+    },
+    {
+      "id": 14, "title": "数据总结",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "数据总结", "fs": 42, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "cards_2x3", "start_y": 72, "items": [
+          {"title": "华南第一", "desc": "7,845人 · 63专业\n20个ESI前1%\n5个前1‰ · 11个双一流\nQS世界第267位", "color": "#00663D"},
+          {"title": "广东主场", "desc": "本省3,091人占40%\n物理628起 · 历史623起\n位次优势远超省外\n8个专业组梯度报考", "color": "#B2062E"},
+          {"title": "王牌专业", "desc": "临八663 · 口腔5+3 657\n计算机657 · AI 651\n数学651 · 电子650\n物化必选 · 院士领衔", "color": "#1565C0"},
+          {"title": "五校园", "desc": "广州(南/北/东)\n珠海海滨校区\n深圳光明科学城\n粤港澳大湾区全覆盖", "color": "#E65100"},
+          {"title": "分数对标", "desc": "省外640+稳录\n广东620+可稳\n中大≈复旦-30~50分\n本省性价比最高985", "color": "#2E7D32"},
+          {"title": "报考指南", "desc": "代码10558\n物化选科最广\n50+双学士学位\n大一大二转专业机会", "color": "#C8922A"}
+        ]}
+      ]
+    },
+    {
+      "id": 15, "title": "致谢",
+      "elements": [
+        {"type": "text", "x": 60, "y": 80, "w": 840, "h": 70, "text": "博学 审问 慎思 明辨 笃行", "fs": 46, "color": "#00663D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 240, "w": 840, "h": 130, "text": "中山大学 · 华南第一学府\n2025年本科招生数据全景\n\n数据来源: 中山大学本科招生网(zs.sysu.edu.cn)\n各省教育考试院 · 教育部阳光高考平台\n网络收集版仅供参考 · 请以官方发布为准", "fs": 20, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.6},
+        {"type": "text", "x": 60, "y": 485, "w": 840, "h": 25, "text": "2026年7月  ·  Claude Code + WPS COM 生成", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    }
+  ]
+}
