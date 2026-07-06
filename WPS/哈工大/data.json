@@ -1,0 +1,128 @@
+{
+  "canvas": {"w": 960, "h": 540},
+  "slides": [
+    {
+      "id": 1, "title": "封面",
+      "elements": [
+        {"type": "text", "x": 60, "y": 60, "w": 840, "h": 100, "text": "哈尔滨工业大学\n2025年本科招生数据全景", "fs": 44, "color": "#00508F", "bold": true, "align": 2, "font": "SimHei", "line_spacing": 1.3},
+        {"type": "text", "x": 60, "y": 220, "w": 840, "h": 35, "text": "一校三区 · 哈尔滨 + 威海 + 深圳 · C9联盟 · 985/双一流A类", "fs": 20, "color": "#555555", "bold": false, "align": 2},
+        {"type": "image", "x": 50, "y": 275, "w": 860, "h": 100, "file": "images/chart_numbers.png"},
+        {"type": "text", "x": 60, "y": 420, "w": 840, "h": 35, "text": "规格严格  ·  功夫到家  ·  一校三区  ·  统一培养", "fs": 22, "color": "#C8102E", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 488, "w": 840, "h": 25, "text": "校本部10213 · 威海19213 · 深圳18213  |  三校区代码分别填报 · 毕业证统一", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 2, "title": "目录",
+      "elements": [
+        {"type": "text", "x": 60, "y": 25, "w": 840, "h": 45, "text": "目  录", "fs": 46, "color": "#333333", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "card_list_wide", "items": [
+          {"num": "01", "title": "哈工大概况", "sub": "一校三区 · C9联盟 · 985/双一流A类 · 国防七子之首"},
+          {"num": "02", "title": "招生总览", "sub": "三校区≈7,640人 · 工科试验班45% · 院士班/AI班新设"},
+          {"num": "03", "title": "本部分数", "sub": "15省普通类分数线 · 最高685(河南) · 院士班680+"},
+          {"num": "04", "title": "深圳分数", "sub": "15省分数线 · 最高774(海南) · 多省660+"},
+          {"num": "05", "title": "威海分数", "sub": "15省分数线 · 最高732(海南) · 性价比之选"},
+          {"num": "06", "title": "三区对比", "sub": "分数区间对比 · 报考热度指数 · C9门槛线"},
+          {"num": "07", "title": "热门专业", "sub": "院士班 · AI班 · 未来技术 · 机器人拔尖班"},
+          {"num": "08", "title": "各省名额", "sub": "8省三校区招生人数 · 广东468 · 山东795"},
+          {"num": "09", "title": "报考指南", "sub": "三校区代码不同 · 集群内专业任选 · 中外合作"},
+          {"num": "10", "title": "数据总结", "sub": "六大招生亮点"}
+        ], "start_y": 88, "item_h": 43, "gap": 2,
+           "title_color": "#1A1A1A", "sub_color": "#555555"}
+      ]
+    },
+    {
+      "id": 3, "title": "哈工大概况",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "哈工大概况", "fs": 40, "color": "#00508F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 25, "y": 62, "w": 440, "h": 310, "file": "images/201907_Harbin_Institute_of_Technology_01.jpg"},
+        {"type": "text", "x": 490, "y": 74, "w": 445, "h": 30, "text": "哈尔滨工业大学", "fs": 30, "color": "#00508F", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 490, "y": 118, "w": 445, "h": 120, "text": "■ 1920年建校  中长铁路创办\n■ C9联盟成员  国防七子之首\n■ 985工程  双一流A类\n■ 航天名校  工程师摇篮\n■ 8个学科ESI全球前1‰\n■ 2025年QS世界排名第252位", "fs": 18, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.3},
+        {"type": "text", "x": 490, "y": 260, "w": 445, "h": 30, "text": "一校三区布局", "fs": 26, "color": "#C8102E", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 490, "y": 300, "w": 445, "h": 100, "text": "哈尔滨(校本部) 1920年建 招生≈2,640人\n威海校区 1985年建 招生≈2,640人\n深圳校区 2002年建 招生≈1,634人\n\n三校区统一培养标准\n毕业证书均颁发哈尔滨工业大学\n本科毕业证书和学士学位证书\n深圳校区注明培养校区", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "招生代码 校本部10213 · 威海19213 · 深圳18213  |  三校区分别填报志愿 · 分别录取", "color": "#00508F"}
+      ]
+    },
+    {
+      "id": 4, "title": "招生总览",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "招生总览", "fs": 40, "color": "#00508F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 60, "w": 930, "h": 330, "file": "images/chart_pie_enroll.png"},
+        {"type": "text", "x": 25, "y": 405, "w": 910, "h": 80, "text": "2025年一校三区合计招生约7,640人  |  新增多个院士班和AI+领军班方向  |  工科试验班占45%\n深圳校区集群内专业任选  |  威海综合评价招生(山东130人)  |  中外合作办学涵盖9个专业", "fs": 16, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.3}
+      ]
+    },
+    {
+      "id": 5, "title": "本部分数",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "本部分数", "fs": 40, "color": "#00508F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 58, "w": 940, "h": 340, "file": "images/chart_bar_harbin.png"},
+        {"type": "text", "x": 25, "y": 410, "w": 910, "h": 80, "text": "校本部(哈尔滨)普通类最高685分(河南)  最低601分(黑龙江中外合作)  院士班/AI班普遍680+\n纯普通类(非特殊类型)分数远高于最低分  |  黑龙江普通类684分(位次99)", "fs": 16, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.3}
+      ]
+    },
+    {
+      "id": 6, "title": "深圳分数",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "深圳分数", "fs": 40, "color": "#0088A0", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 58, "w": 940, "h": 320, "file": "images/chart_bar_shenzhen.png"},
+        {"type": "text", "x": 25, "y": 395, "w": 910, "h": 95, "text": "深圳校区分数线整体最高  海南774(位次240)  天津680(位次656)  山东664(位次1390)\n广东662(位次1730)  计算机与电子通信集群内专业任选  毕业证书注明深圳校区培养", "fs": 16, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.3}
+      ]
+    },
+    {
+      "id": 7, "title": "威海分数",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "威海分数", "fs": 40, "color": "#006B6B", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 58, "w": 940, "h": 320, "file": "images/chart_bar_weihai.png"},
+        {"type": "text", "x": 25, "y": 395, "w": 910, "h": 95, "text": "威海校区性价比最高  海南732 · 天津660 · 北京649  机器人拔尖班2+2培养(前2年威海后2年本部)\n山东综合评价招生130人  中外合作(智能材料/船舶)  毕业证与本部完全相同", "fs": 16, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.3}
+      ]
+    },
+    {
+      "id": 8, "title": "三区对比",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "三区对比", "fs": 40, "color": "#00508F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 55, "w": 940, "h": 275, "file": "images/chart_bar_compare.png"},
+        {"type": "image", "x": 10, "y": 340, "w": 940, "h": 155, "file": "images/chart_bar_range.png"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "深圳分数最高  ·  威海性价比最优  ·  本部院士班最顶尖  ·  C9高校门槛线≈667分", "color": "#00508F"}
+      ]
+    },
+    {
+      "id": 9, "title": "热门专业",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "热门专业", "fs": 40, "color": "#C8102E", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 58, "w": 560, "h": 300, "file": "images/chart_bar_majors.png"},
+        {"type": "text", "x": 600, "y": 74, "w": 335, "h": 30, "text": "2025年新增方向", "fs": 26, "color": "#C8102E", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 600, "y": 118, "w": 335, "h": 250, "text": "◆ 院士特色班(顶尖通道)\n   自主智能系统(陈杰院士)\n   人工智能班(高文院士)\n\n◆ AI+先进技术领军班\n   专业任选+跨校区培养\n   可3+1/2+2模式\n\n◆ 未来技术拔尖班\n   全校最优资源倾斜\n\n◆ 机器人拔尖班(威海)\n   2+2培养 前2年威海\n   后2年本部 同等推免\n\n◆ 港大优学班\n   3年本科+港大硕/博", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.15},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "院士班680+  AI班675+  未来技术680+  计算机662+  机器人650+  最低分均远超普通专业", "color": "#C8102E"}
+      ]
+    },
+    {
+      "id": 10, "title": "各省名额",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "各省名额", "fs": 40, "color": "#00508F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 55, "w": 940, "h": 280, "file": "images/chart_bar_province.png"},
+        {"type": "image", "x": 10, "y": 345, "w": 940, "h": 150, "file": "images/chart_heat.png"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "广东468人居首(深圳388)  山东795人(威海699)  黑龙江993人(本部为主)  报考热度:深圳>本部>威海", "color": "#00508F"}
+      ]
+    },
+    {
+      "id": 11, "title": "数据总结",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "数据总结", "fs": 42, "color": "#00508F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "cards_2x3", "items": [
+          {"title": "一校三区", "desc": "哈尔滨(本部) + 威海 + 深圳\n三校区≈7,640人招生\n统一培养标准\n毕业证统一(哈工大)", "color": "#00508F"},
+          {"title": "分数分层", "desc": "深圳最高 664+(山东)\n本部院士班 680+\n威海性价比 607-660\n三档选择 满足不同分段", "color": "#0088A0"},
+          {"title": "院士领衔", "desc": "院士特色班 · AI班\n未来技术拔尖班\n港大优学班\nAI+领军班(深圳/本部)", "color": "#C8102E"},
+          {"title": "专业任选", "desc": "深圳集群内专业任选\n威海AI+领军班专业任选\n跨校区3+1/2+2培养\n给予学生最大自由度", "color": "#006B6B"},
+          {"title": "填报须知", "desc": "三个代码分别填报\n分别录取 不可调剂\n中外合作9个专业\n物化必选(多数省份)", "color": "#D4A82A"},
+          {"title": "报考建议", "desc": "目标680+冲院士班\n目标660+冲深圳校区\n目标630+威海稳录\n黑龙江省内优势明显", "color": "#E06020"}
+        ], "start_y": 55}
+      ]
+    },
+    {
+      "id": 12, "title": "致谢",
+      "elements": [
+        {"type": "text", "x": 60, "y": 90, "w": 840, "h": 70, "text": "规格严格  ·  功夫到家", "fs": 48, "color": "#00508F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 220, "w": 840, "h": 130, "text": "哈尔滨工业大学\n2025年本科招生数据全景  ·  一校三区\n\n数据来源: 哈工大招生办官网(zsb.hit.edu.cn)\n各省教育考试院 · 第三方高考信息平台\n网络收集版仅供参考 · 请以官方发布为准", "fs": 20, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.6},
+        {"type": "text", "x": 60, "y": 480, "w": 840, "h": 30, "text": "2026年6月  ·  Claude Code + WPS COM 生成", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    }
+  ]
+}
