@@ -1,0 +1,170 @@
+{
+  "canvas": {"w": 960, "h": 540},
+  "slides": [
+    {
+      "id": 1,
+      "title": "封面",
+      "elements": [
+        {"type": "text", "x": 60, "y": 55, "w": 840, "h": 60, "text": "重庆大学", "fs": 52, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 130, "w": 840, "h": 36, "text": "2025年本科招生宣传", "fs": 26, "color": "#333333", "bold": false, "align": 2, "font": "Microsoft YaHei"},
+        {"type": "image", "x": 600, "y": 180, "w": 320, "h": 220, "file": "images/Chongqing_University_Main_Entrance.jpg"},
+        {"type": "cards_1x4_info", "start_y": 430, "items": [
+          {"num": "6,400+", "label": "年本科招生", "color": "#004B8D"},
+          {"num": "4个", "label": "校区", "color": "#0088A0"},
+          {"num": "3个", "label": "A类学科", "color": "#C41E3A"},
+          {"num": "12个", "label": "ESI前1%", "color": "#D4A82A"}
+        ]}
+      ]
+    },
+    {
+      "id": 2,
+      "title": "目录",
+      "elements": [
+        {"type": "text", "x": 60, "y": 28, "w": 840, "h": 50, "text": "目  录", "fs": 46, "color": "#1A1A1A", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "card_list_wide", "start_y": 92, "item_h": 44, "gap": 2, "items": [
+          {"num": "01", "title": "学校概况", "sub": "985 · 双一流A类 · 创建于1929年"},
+          {"num": "02", "title": "历史沿革", "sub": "近百年发展历程与重要里程碑"},
+          {"num": "03", "title": "学科实力", "sub": "A类学科 · ESI全球前1% · 优势专业"},
+          {"num": "04", "title": "招生计划", "sub": "2025年招生规模与专业分布"},
+          {"num": "05", "title": "录取分数", "sub": "各省近年录取分数线参考"},
+          {"num": "06", "title": "校园环境", "sub": "四校区布局与虎溪新校区风光"},
+          {"num": "07", "title": "人才培养", "sub": "卓越工程师 · 拔尖计划 · 国际交流"},
+          {"num": "08", "title": "加入我们", "sub": "报考指南与联系方式"}
+        ]}
+      ]
+    },
+    {
+      "id": 3,
+      "title": "学校概况",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "学校概况", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 72, "w": 420, "h": 260, "file": "images/cqu_wiki_08.jpg"},
+        {"type": "text", "x": 470, "y": 72, "w": 460, "h": 260, "text": "· 教育部直属全国重点大学\n· 985工程 · 211工程 · 双一流A类\n· 创办于1929年，1942年国立\n· 四校区：A区 · B区 · C区 · 虎溪\n· 占地5,300余亩，建筑面积170万㎡\n· 专任教师3,200余人，院士15人", "fs": 20, "color": "#333333", "bold": false, "align": 1, "font": "Microsoft YaHei", "line_spacing": 1.4},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "重庆大学 — 屹立于山城百年的学术殿堂", "color": "#004B8D"}
+      ]
+    },
+    {
+      "id": 4,
+      "title": "历史沿革",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "历史沿革", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 72, "w": 440, "h": 180, "file": "images/chart_timeline.png"},
+        {"type": "image", "x": 490, "y": 72, "w": 220, "h": 180, "file": "images/cqu_wiki_05.jpg"},
+        {"type": "text", "x": 725, "y": 72, "w": 210, "h": 180, "text": "1929年成立筹备会\n1942年定为国立\n1952年院系调整\n2000年三校合并\n2017年双一流A类", "fs": 17, "color": "#333333", "bold": false, "align": 1, "font": "Microsoft YaHei", "line_spacing": 1.5},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "近百年薪火相传 — 从私立学堂到双一流名校", "color": "#004B8D"}
+      ]
+    },
+    {
+      "id": 5,
+      "title": "学科实力",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "学科实力", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 68, "w": 480, "h": 210, "file": "images/chart_bar_majors.png"},
+        {"type": "table", "x": 530, "y": 68, "w": 400, "h": 210, "rows": 6, "cols": 2, "header_color": "#004B8D", "th_fs": 15, "td_fs": 14,
+         "data": [
+           ["学科类别", "数量"],
+           ["A类学科", "3个"],
+           ["B+类学科", "14个"],
+           ["ESI前1%", "12个"],
+           ["ESI前1‰", "2个"],
+           ["国家级一流专业", "43个"]
+         ]
+        },
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "工科见长 · 理工结合 · 多学科协调发展", "color": "#004B8D"}
+      ]
+    },
+    {
+      "id": 6,
+      "title": "ESI学科",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "ESI学科", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 68, "w": 460, "h": 210, "file": "images/chart_esi_trend.png"},
+        {"type": "text", "x": 510, "y": 68, "w": 420, "h": 210, "text": "全球前1%学科：\n  工程学 · 材料科学 · 化学\n  计算机科学 · 数学 · 临床医学\n  物理学 · 生物学 · 环境科学\n  社会科学 · 农业科学 · 精神病学\n\n全球前1‰学科：\n  工程学 · 材料科学", "fs": 18, "color": "#333333", "bold": false, "align": 1, "font": "Microsoft YaHei", "line_spacing": 1.4},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "12个学科进入ESI全球前1%，2个进入前1‰", "color": "#004B8D"}
+      ]
+    },
+    {
+      "id": 7,
+      "title": "招生计划",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "招生计划", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 68, "w": 400, "h": 280, "file": "images/chart_pie_enroll.png"},
+        {"type": "table", "x": 450, "y": 68, "w": 480, "h": 280, "rows": 6, "cols": 3, "header_color": "#004B8D", "th_fs": 14, "td_fs": 13,
+         "data": [
+           ["招生类型", "人数", "占比"],
+           ["工科试验班", "2,800", "44%"],
+           ["理科试验班", "1,600", "25%"],
+           ["人文社科类", "1,200", "19%"],
+           ["艺术/体育/专项", "500", "8%"],
+           ["其他", "300", "5%"]
+         ]
+        },
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "2025年本科招生计划约6,400人，覆盖全国31个省区市", "color": "#004B8D"}
+      ]
+    },
+    {
+      "id": 8,
+      "title": "录取分数",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "录取分数", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 68, "w": 900, "h": 260, "file": "images/chart_bar_compare.png"},
+        {"type": "text", "x": 30, "y": 340, "w": 900, "h": 40, "text": "* 数据为2023-2024年理科/物理类最低录取分参考，2025年以各省考试院公布为准", "fs": 14, "color": "#888888", "bold": false, "align": 1, "font": "Microsoft YaHei"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "录取分数稳中有升 — 多省位次持续攀升", "color": "#004B8D"}
+      ]
+    },
+    {
+      "id": 9,
+      "title": "校园环境",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "校园环境", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 30, "y": 68, "w": 450, "h": 260, "file": "images/cqu_wiki_08.jpg"},
+        {"type": "text", "x": 500, "y": 68, "w": 430, "h": 260, "text": "· A区（沙坪坝）：老校区\n   历史底蕴深厚，建筑古朴\n· B区（建院）：建筑学院\n   建筑风格独特，设计氛围浓\n· C区（嘉陵江）：应用学科\n   临江而建，风景优美\n· 虎溪校区（大学城）：主校区\n   占地3,600亩，设施先进", "fs": 18, "color": "#333333", "bold": false, "align": 1, "font": "Microsoft YaHei", "line_spacing": 1.45},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "四校区协同发展 — 虎溪新校区占地3,600亩", "color": "#004B8D"}
+      ]
+    },
+    {
+      "id": 10,
+      "title": "人才培养",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "人才培养", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "cards_2x3", "start_y": 68, "items": [
+          {"title": "卓越工程师", "desc": "教育部卓越工程师培养计划，与华为、比亚迪、中冶等头部企业共建实践基地", "color": "#004B8D"},
+          {"title": "拔尖计划2.0", "desc": "数学、物理、化学、生物、计算机等基础学科拔尖学生培养基地", "color": "#0088A0"},
+          {"title": "国豪书院", "desc": "本博贯通培养，院士导师一对一指导，培养未来科学家和领军人才", "color": "#C41E3A"},
+          {"title": "国际交流", "desc": "与MIT、斯坦福、牛津等200余所高校建立合作，年均派出交流生1,500人", "color": "#D4A82A"},
+          {"title": "创新创业", "desc": "国家级双创示范基地，年均孵化项目300+，学生获国际竞赛奖项200+项", "color": "#2E8B57"},
+          {"title": "毕业去向", "desc": "本科深造率超55%，就业率保持在95%以上，毕业生深受用人单位好评", "color": "#E06020"}
+        ]}
+      ]
+    },
+    {
+      "id": 11,
+      "title": "加入我们",
+      "elements": [
+        {"type": "text", "x": 60, "y": 14, "w": 840, "h": 44, "text": "加入我们", "fs": 42, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "table", "x": 60, "y": 75, "w": 840, "h": 280, "rows": 5, "cols": 3, "header_color": "#004B8D", "th_fs": 16, "td_fs": 15,
+         "data": [
+           ["联系方式", "详情", "网址/电话"],
+           ["本科招生网", "招生简章 · 历年分数 · 专业介绍", "zhaosheng.cqu.edu.cn"],
+           ["招生咨询电话", "工作日8:30-17:30", "023-65102371"],
+           ["微信公众号", "重庆大学招生办公室", "CQU_zhaosheng"],
+           ["校园开放日", "每年6月中下旬", "详见官网通知"]
+         ]
+        },
+        {"type": "text", "x": 60, "y": 370, "w": 840, "h": 60, "text": "欢迎报考重庆大学！在山城重庆，遇见更好的你。", "fs": 24, "color": "#C41E3A", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "重庆大学招生办公室 · 2025年6月", "color": "#004B8D"}
+      ]
+    },
+    {
+      "id": 12,
+      "title": "致谢",
+      "elements": [
+        {"type": "text", "x": 60, "y": 80, "w": 840, "h": 70, "text": "耐劳苦 · 尚俭朴", "fs": 48, "color": "#004B8D", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 155, "w": 840, "h": 40, "text": "勤学业 · 爱国家", "fs": 48, "color": "#C41E3A", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 260, "w": 840, "h": 30, "text": "— 重庆大学校训 —", "fs": 20, "color": "#888888", "bold": false, "align": 2, "font": "Microsoft YaHei"},
+        {"type": "text", "x": 60, "y": 360, "w": 840, "h": 24, "text": "数据来源：重庆大学本科招生网、教育部第四轮学科评估、科睿唯安ESI数据库", "fs": 14, "color": "#888888", "bold": false, "align": 2, "font": "Microsoft YaHei"},
+        {"type": "text", "x": 60, "y": 400, "w": 840, "h": 24, "text": "制作日期：2025年6月", "fs": 14, "color": "#888888", "bold": false, "align": 2, "font": "Microsoft YaHei"}
+      ]
+    }
+  ]
+}
