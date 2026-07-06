@@ -1,0 +1,136 @@
+{
+  "canvas": {"w": 960, "h": 540},
+  "slides": [
+    {
+      "id": 1, "title": "封面",
+      "elements": [
+        {"type": "text", "x": 60, "y": 55, "w": 840, "h": 65, "text": "中国科学技术大学", "fs": 48, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 145, "w": 840, "h": 35, "text": "2025年本科招生宣传  ·  科学家的摇篮", "fs": 22, "color": "#555555", "bold": false, "align": 2},
+        {"type": "image", "x": 420, "y": 200, "w": 120, "h": 120, "file": "images/Gate_of_University_of_Science_and_Technology_of_China_(180405).jpg"},
+        {"type": "image", "x": 50, "y": 360, "w": 860, "h": 90, "file": "images/chart_numbers.png"},
+        {"type": "text", "x": 60, "y": 480, "w": 840, "h": 25, "text": "中科院直属  ·  985/双一流A类  ·  千生一院士  ·  百人一杰青", "fs": 16, "color": "#999999", "bold": false, "align": 2}
+      ]
+    },
+    {
+      "id": 2, "title": "目录",
+      "elements": [
+        {"type": "text", "x": 60, "y": 25, "w": 840, "h": 45, "text": "目  录", "fs": 46, "color": "#333333", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "card_list_wide", "start_y": 88, "item_h": 43, "gap": 2, "items": [
+          {"num": "01", "title": "学校概况", "sub": "中科院直属 · 1958年建校于北京 · 1970年迁址合肥 · 科学家的摇篮"},
+          {"num": "02", "title": "少年班", "sub": "49期招生372人 · A/B/C三档录取 · 国家集训队免高考"},
+          {"num": "03", "title": "录取分数", "sub": "15省普通类分数线 · 最高683(河南) · 15省最低位次"},
+          {"num": "04", "title": "招生专业", "sub": "新增量子信息/AI/集成电路 · 100%自由选专业"},
+          {"num": "05", "title": "C9名校对比", "sub": "中科大 vs 北大 vs 复旦 · 10省分数线对比"},
+          {"num": "06", "title": "各省名额", "sub": "安徽292人居首 · 10省招生计划人数分布"},
+          {"num": "07", "title": "科研实力", "sub": "36位本科院士校友 · 168位杰青 · 1个国家实验室"},
+          {"num": "08", "title": "深造去向", "sub": "80%世界TOP100深造 · 千生一院士 · 中科院各所35%"},
+          {"num": "09", "title": "培养特色", "sub": "科教融合3.0 · 中法数学英才班 · 100%资助国际交流"},
+          {"num": "10", "title": "数据总结", "sub": "六大报考亮点"}
+        ]}
+      ]
+    },
+    {
+      "id": 3, "title": "学校概况",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "学校概况", "fs": 40, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 25, "y": 62, "w": 440, "h": 300, "file": "images/Gate_of_University_of_Science_and_Technology_of_China_(180405).jpg"},
+        {"type": "text", "x": 490, "y": 74, "w": 445, "h": 30, "text": "中国科学技术大学", "fs": 28, "color": "#003B6F", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 490, "y": 118, "w": 445, "h": 140, "text": "■ 中国科学院直属  全国唯一\n■ 1958年创建于北京\n   1970年迁址安徽合肥\n■ C9联盟  985/双一流A类\n■ 「千生一院士  百人一杰青」\n■ 11个学科ESI全球前1%\n   4个学科ESI前1‰\n■ 在校生约17,000人\n   本科生约7,400人", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "text", "x": 490, "y": 278, "w": 445, "h": 30, "text": "何为「科气」？", "fs": 24, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 490, "y": 315, "w": 445, "h": 90, "text": "■ 不浮躁  不跟风  坚持基础研究\n■ 90%以上本科生进入实验室\n■ 全国唯一拥有国家实验室的大学\n■ 人均科研产出全国高校第一\n■ 教室 · 图书馆 · 实验室 三点一线\n   ——「科大不大  科气很足」", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "中科院直属全国唯一  ·  1958年建校  ·  千生一院士  ·  百人一杰青  ·  科学家的摇篮", "color": "#003B6F"}
+      ]
+    },
+    {
+      "id": 4, "title": "少年班",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "少年班", "fs": 40, "color": "#C41230", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 55, "w": 560, "h": 275, "file": "images/chart_shaonian.png"},
+        {"type": "text", "x": 600, "y": 72, "w": 335, "h": 28, "text": "2025少年班招生", "fs": 26, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 600, "y": 115, "w": 335, "h": 230, "text": "第49期 · 录取372人\n\n报考条件:\n  少年班: 2009年后出生\n  少创班: 2008年后出生\n  原则上高二及以下\n\n选拔流程:\n  报名→入围考→科学营→高考\n\n录取分档:\n  A档: 高考达一本线即可\n  B档: 投档线下40分\n  C档: 达投档线择优\n\n国家集训队入选者\n免高考直接录取", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.15},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "中国最富盛名的超常教育品牌  49期少年班  372人录取  A档一本线即可", "color": "#C41230"}
+      ]
+    },
+    {
+      "id": 5, "title": "录取分数",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "录取分数", "fs": 40, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 55, "w": 940, "h": 280, "file": "images/chart_bar_scores.png"},
+        {"type": "image", "x": 10, "y": 345, "w": 940, "h": 145, "file": "images/chart_bar_ranks.png"},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "90%省份需全省前1000名  安徽本省最低位次634  物化必选  特殊类(国家专项)549起", "color": "#003B6F"}
+      ]
+    },
+    {
+      "id": 6, "title": "招生专业",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "招生专业", "fs": 40, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 62, "w": 550, "h": 340, "file": "images/chart_pie_majors.png"},
+        {"type": "text", "x": 590, "y": 78, "w": 345, "h": 28, "text": "2025年新增专业方向", "fs": 24, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 590, "y": 120, "w": 345, "h": 150, "text": "◆ 量子信息科学\n   未来技术学院 · 三大国家级平台\n\n◆ 人工智能\n   AI与数据科学学院 · AI科技英才班\n\n◆ 集成电路方向\n   微电子学院 · 中微英才班\n   「一生一芯」特色课程\n\n◆ 机器人工程\n   工科试验班 · 智能制造/具身智能\n\n◆ 临床医学英才班\n   安徽/江西/吉林首次招生", "fs": 14, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.1},
+        {"type": "text", "x": 590, "y": 290, "w": 345, "h": 28, "text": "100%自主选择专业", "fs": 22, "color": "#003B6F", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 590, "y": 325, "w": 345, "h": 80, "text": "在校期间转专业次数不做限制\n真正「零门槛」自由选择\n全校专业任选 · 无人数限制", "fs": 16, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.2},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "扩招新增全部投向国家战略急需领域  100%自主选专业  零门槛转专业  全校任选", "color": "#003B6F"}
+      ]
+    },
+    {
+      "id": 7, "title": "C9对比",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "C9对比", "fs": 40, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 58, "w": 940, "h": 340, "file": "images/chart_bar_c9.png"},
+        {"type": "text", "x": 25, "y": 410, "w": 910, "h": 80, "text": "中科大录取线紧追北大  与复旦互有高低  在安徽本省673分(位次634)  河南683分(位次857)\n在绝大多数省份  中科大稳稳占据华五第二(仅次于北大)  与复旦基本持平", "fs": 16, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.3}
+      ]
+    },
+    {
+      "id": 8, "title": "各省名额",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "各省名额", "fs": 40, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 58, "w": 940, "h": 310, "file": "images/chart_bar_province.png"},
+        {"type": "text", "x": 25, "y": 385, "w": 910, "h": 100, "text": "中科大作为中科院直属高校  招生名额分配兼顾公平与生源质量\n安徽作为所在地省份获最大倾斜(292人)  河南/山东/四川等生源大省各100+\n2025年响应国家「优质本科扩容」政策  新增计划全部投向量子/AI/IC等急需领域", "fs": 16, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.3}
+      ]
+    },
+    {
+      "id": 9, "title": "科研实力",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "科研实力", "fs": 40, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 10, "y": 60, "w": 560, "h": 270, "file": "images/chart_research.png"},
+        {"type": "image", "x": 585, "y": 60, "w": 180, "h": 130, "file": "images/Lake_in_University_of_Science_and_Technology_of_China_(180405).jpg"},
+        {"type": "text", "x": 585, "y": 210, "w": 350, "h": 28, "text": "国家级科研平台", "fs": 24, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 585, "y": 248, "w": 350, "h": 120, "text": "■ 合肥国家实验室(独立)\n   全国高校唯一\n■ 合肥微尺度国家研究中心\n■ 6个国家重点实验室\n■ 42位中科院院士(现任)\n■ 11个学科ESI全球前1%\n■ 4个学科ESI前1‰\n■ 人均科研产出全国第一", "fs": 15, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.25},
+        {"type": "tagline_bar", "x": 25, "y": 498, "w": 910, "h": 28, "text": "36位本科校友院士  168位本科校友杰青  全国唯一拥有国家实验室的大学  人均产出第1", "color": "#003B6F"}
+      ]
+    },
+    {
+      "id": 10, "title": "深造去向",
+      "elements": [
+        {"type": "text", "x": 60, "y": 12, "w": 840, "h": 38, "text": "深造去向", "fs": 40, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "image", "x": 15, "y": 65, "w": 400, "h": 320, "file": "images/chart_pie_future.png"},
+        {"type": "image", "x": 430, "y": 65, "w": 260, "h": 180, "file": "images/n_of_sakura_in_University_of_Science_and_Technology_of_China,_2018.jpg"},
+        {"type": "text", "x": 710, "y": 70, "w": 225, "h": 30, "text": "培养特色", "fs": 24, "color": "#C41230", "bold": true, "align": 1, "font": "SimHei"},
+        {"type": "text", "x": 710, "y": 110, "w": 225, "h": 240, "text": "■ 科教融合3.0\n   全部科技英才班\n   纳入中科院贯通培养\n\n■ 中法数学英才班\n   7人考取巴黎高师\n   14人考取巴黎综合理工\n   全国高校第一\n\n■ 100%资助国际交流\n   200+所海外名校合作\n   一次往返机票+生活费\n\n■ 本科生全员科研\n   90%+进实验室\n   大二即参与课题组\n\n■ 本硕博衔接培养\n   少年班学院「一生一方案」", "fs": 12, "color": "#333333", "bold": false, "align": 1, "line_spacing": 1.1},
+        {"type": "text", "x": 430, "y": 260, "w": 260, "h": 100, "text": "「千生一院士\n  百人一杰青」\n培养大国重器\n总设计师最多的高校", "fs": 18, "color": "#003B6F", "bold": true, "align": 2, "line_spacing": 1.35}
+      ]
+    },
+    {
+      "id": 11, "title": "数据总结",
+      "elements": [
+        {"type": "text", "x": 60, "y": 10, "w": 840, "h": 38, "text": "数据总结", "fs": 42, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "cards_2x3", "start_y": 55, "items": [
+          {"title": "分数门槛", "desc": "全省前300-1000名\n河南683 安徽673\n物化必选 · 670+稳录\n国家专项549起", "color": "#003B6F"},
+          {"title": "少年班", "desc": "49期招生372人\nA档一本线即录取\n高二及以下可报\n免高考直录通道", "color": "#C41230"},
+          {"title": "自由选专业", "desc": "100%自主选择\n零门槛  不限制次数\n全校所有专业任选\n给你最大自由度", "color": "#C8922A"},
+          {"title": "科研巅峰", "desc": "36位本科院士校友\n168位本科杰青校友\n全国唯一拥有\n国家实验室的大学", "color": "#003B6F"},
+          {"title": "深造王者", "desc": "80%世界TOP100深造\n国内90%+双一流\n中科院各所35%\n海外名校18%", "color": "#007A6E"},
+          {"title": "科气十足", "desc": "中科院直属全国唯一\n人均科研产出第1\n三点一线 · 不浮躁\n科学家的摇篮", "color": "#E0682A"}
+        ]}
+      ]
+    },
+    {
+      "id": 12, "title": "致谢",
+      "elements": [
+        {"type": "text", "x": 60, "y": 80, "w": 840, "h": 70, "text": "红专并进  理实交融", "fs": 48, "color": "#003B6F", "bold": true, "align": 2, "font": "SimHei"},
+        {"type": "text", "x": 60, "y": 220, "w": 840, "h": 130, "text": "中国科学技术大学\n2025年本科招生宣传  ·  科学家的摇篮\n\n数据来源: 中科大本科招生网(zsb.ustc.edu.cn)\n教育部学科评估 · 科睿唯安ESI · 各省教育考试院\n网络收集版仅供参考 · 请以官方发布为准", "fs": 20, "color": "#555555", "bold": false, "align": 2, "line_spacing": 1.6},
+        {"type": "text", "x": 60, "y": 480, "w": 840, "h": 30, "text": "2026年6月  ·  Claude Code + WPS COM 生成", "fs": 14, "color": "#999999", "bold": false, "align": 2}
+      ]
+    }
+  ]
+}
