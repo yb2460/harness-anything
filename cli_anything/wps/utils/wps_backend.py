@@ -243,6 +243,18 @@ def open_document(app, path: str):
         raise ValueError(f"不支持的文件格式: {ext}")
 
 
+def _wps_save(doc, abs_path, **kwargs):
+    """兼容 WPS 和 MS Office 的保存方法。
+
+    MS Office 使用 SaveAs2，WPS Office 的 COM 接口只支持 SaveAs。
+    优先尝试 SaveAs2（MS Office），失败时回退到 SaveAs（WPS）。
+    """
+    try:
+        doc.SaveAs2(abs_path, **kwargs)
+    except AttributeError:
+        doc.SaveAs(abs_path, **kwargs)
+
+
 def save_as(doc, path: str, doc_type: str = "writer", format_name: str = None):
     """另存为指定格式。
 
@@ -267,10 +279,10 @@ def save_as(doc, path: str, doc_type: str = "writer", format_name: str = None):
     fmt_const = formats.get(format_name)
     if fmt_const is None:
         # 格式不在映射表中，尝试直接保存
-        doc.SaveAs2(abs_path)
+        _wps_save(doc, abs_path)
         return abs_path
 
-    doc.SaveAs2(abs_path, FileFormat=fmt_const)
+    _wps_save(doc, abs_path, FileFormat=fmt_const)
     return abs_path
 
 
