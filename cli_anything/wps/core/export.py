@@ -204,7 +204,10 @@ def export(
     doc = None
     try:
         app = find_wps(doc_type)
-        app.Visible = False  # 后台运行
+        # WPS 演示（KWPP.Application）的 Visible 属性只读，赋值会抛 com_error；
+        # 且 WPS 默认即后台运行，故 impress 跳过该赋值（writer/calc 保持原行为）。
+        if doc_type != "impress":
+            app.Visible = False  # 后台运行
 
         doc = create_document(app, doc_type)
         _fill_document(doc, project, doc_type)
@@ -468,6 +471,11 @@ def _fill_impress(doc, project: Dict[str, Any]) -> None:
     # 如果内容为空，至少保留一张幻灯片
     if not slides:
         return
+
+    # WPS 演示 Presentations.Add() 产生空演示文稿（Slides.Count=0），
+    # 与 MS PowerPoint 不同。此处兼容：若无幻灯片则用 Slides.Add 占位（ppLayoutText=2）。
+    if doc.Slides.Count == 0:
+        doc.Slides.Add(1, 2)
 
     for si, slide_data in enumerate(slides):
         if si == 0:
