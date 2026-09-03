@@ -2,20 +2,13 @@
 """Illustrator document management: create, open, save, info."""
 
 import os
-import pythoncom
-import win32com.client
+
+from cli_anything.illustrator.utils.ai_backend import launch_illustrator
 
 
 def _get_app():
     """Get or create Illustrator COM application instance."""
-    pythoncom.CoInitialize()
-    try:
-        app = win32com.client.Dispatch("Illustrator.Application")
-        return app
-    except Exception:
-        raise RuntimeError(
-            "Adobe Illustrator not found. Install Illustrator first."
-        )
+    return launch_illustrator()
 
 
 def create_document(width: float = 612.0, height: float = 792.0,

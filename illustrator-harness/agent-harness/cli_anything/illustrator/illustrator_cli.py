@@ -13,7 +13,6 @@ import os
 import sys
 import json
 import click
-import pythoncom
 
 from cli_anything.illustrator.utils.ai_backend import detect_illustrator, launch_illustrator
 from cli_anything.illustrator.core import project, layers, text, shapes, export as export_mod

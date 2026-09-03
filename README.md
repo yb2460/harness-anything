@@ -69,16 +69,17 @@ pip install -e .
 | 命令组 | 功能 |
 |--------|------|
 | `project` | 新建/打开/保存 AI 文档 |
-| `layers` | 图层增删改、可见性、锁定 |
-| `shapes` | 矩形、椭圆、线条、多边形绘制 |
+| `layer` | 图层增删改、可见性、锁定 |
+| `shape` | 矩形、椭圆、多边形绘制 |
 | `text` | 文字添加/修改（字体、大小、颜色） |
-| `export` | 导出 PNG / JPEG / SVG / PDF / AI |
+| `export` | 导出 PNG / SVG / PDF / AI |
 
 ```bash
 # 快速上手
-cli-anything-illustrator project new logo.ai -w 500 -h 500
-cli-anything-illustrator text add "Brand" --x 100 --y 100 --font "Arial" --size 72
-cli-anything-illustrator shapes rect --x 50 --y 50 --w 200 --h 100
+cli-anything-illustrator project new --width 500 --height 500
+cli-anything-illustrator project save logo.ai
+cli-anything-illustrator text add "Brand" --x 100 --y 100 --font "Arial" --font-size 72
+cli-anything-illustrator shape rect --x 50 --y 50 --w 200 --h 100
 cli-anything-illustrator export svg output.svg
 ```
 
@@ -160,8 +161,8 @@ cli-anything-zotero skills pipeline thesis
 cli-anything-zotero catalog search "machine learning"
 
 # Illustrator 设计
-cli-anything-illustrator project new logo.ai -w 500 -h 500
-cli-anything-illustrator shapes rect --w 200 --h 200
+cli-anything-illustrator project new --width 500 --height 500
+cli-anything-illustrator shape rect --w 200 --h 200
 
 # Photoshop 设计
 cli-anything-photoshop project new banner.psd -w 1920 -h 1080
