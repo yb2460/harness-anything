@@ -204,7 +204,10 @@ def export(
     doc = None
     try:
         app = find_wps(doc_type)
-        app.Visible = False  # 后台运行
+        try:
+            app.Visible = False  # 后台运行（WPS 演示 KWPP 不支持此属性，忽略）
+        except Exception:
+            pass
 
         doc = create_document(app, doc_type)
         _fill_document(doc, project, doc_type)
@@ -469,25 +472,28 @@ def _fill_impress(doc, project: Dict[str, Any]) -> None:
     if not slides:
         return
 
+    # WPS 新建演示文稿默认 0 张幻灯片，全部用 Slides.Add 创建
     for si, slide_data in enumerate(slides):
-        if si == 0:
-            slide = doc.Slides(1)
-        else:
-            slide = doc.Slides.Add(si + 1, 2)  # ppLayoutText = 2
+        slide = doc.Slides.Add(si + 1, 2)  # ppLayoutText = 2
 
         # 设置标题和内容（通过占位符）
         title = slide_data.get("title", "")
         content = slide_data.get("content", "")
 
         for shape in slide.Shapes:
+            # WPS 占位符 PlaceholderFormat.Type 为整数: 1=标题 2=正文
             try:
-                if shape.Type == 14 and title:  # msoPlaceholder = 14
-                    if "Title" in str(shape.PlaceholderFormat.Type):
-                        shape.TextFrame.TextRange.Text = title
+                ph_type = int(shape.PlaceholderFormat.Type)
+                if ph_type == 1 and title:
+                    shape.TextFrame.TextRange.Text = title
+                    continue
+                if ph_type == 2 and content:
+                    shape.TextFrame.TextRange.Text = content
+                    continue
             except Exception:
                 pass
             try:
-                if shape.HasTextFrame and content:
+                if shape.HasTextFrame and content and not title:
                     shape.TextFrame.TextRange.Text = content
             except Exception:
                 pass
