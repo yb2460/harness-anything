@@ -265,6 +265,15 @@ def save_as(doc, path: str, doc_type: str = "writer", format_name: str = None):
 
     formats = FORMAT_SAVEAS_MAP.get(doc_type, {})
     fmt_const = formats.get(format_name)
+
+    if doc_type == "impress":
+        # WPS 演示（KWPP）无 SaveAs2 方法，只有 SaveAs（FileFormat 关键字已验证可用）
+        if fmt_const is None:
+            doc.SaveAs(abs_path)
+            return abs_path
+        doc.SaveAs(abs_path, FileFormat=fmt_const)
+        return abs_path
+
     if fmt_const is None:
         # 格式不在映射表中，尝试直接保存
         doc.SaveAs2(abs_path)
