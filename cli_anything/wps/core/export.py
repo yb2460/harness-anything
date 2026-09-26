@@ -204,7 +204,10 @@ def export(
     doc = None
     try:
         app = find_wps(doc_type)
-        app.Visible = False  # 后台运行
+        try:
+            app.Visible = False  # 后台运行（WPS Impress 可能不支持）
+        except Exception:
+            pass  # WPS Impress COM 接口可能不支持设置 Visible，忽略
 
         doc = create_document(app, doc_type)
         _fill_document(doc, project, doc_type)
@@ -465,15 +468,22 @@ def _fill_impress(doc, project: Dict[str, Any]) -> None:
     """将内容填充到 WPS Impress 演示文稿。"""
     slides = project.get("slides", [])
 
-    # 如果内容为空，至少保留一张幻灯片
     if not slides:
         return
 
+    # WPS COM 的 Slides 集合不支持直接索引（Slides(1) 和 Slides.Item(1) 均失败），
+    # 需要先通过迭代转为 Python list
+    existing = list(doc.Slides)
+
     for si, slide_data in enumerate(slides):
-        if si == 0:
-            slide = doc.Slides(1)
+        # 复用现有幻灯片，或新增
+        if si < len(existing):
+            slide = existing[si]
         else:
-            slide = doc.Slides.Add(si + 1, 2)  # ppLayoutText = 2
+            try:
+                slide = doc.Slides.Add(si + 1, 2)  # ppLayoutText = 2
+            except Exception:
+                slide = doc.Slides.Add(si + 1, 1)  # fallback: ppLayoutTitle = 1
 
         # 设置标题和内容（通过占位符）
         title = slide_data.get("title", "")
