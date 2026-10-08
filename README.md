@@ -147,6 +147,25 @@ cli-anything-photoshop export png --output result.png
 
 ---
 
+## 技能一键安装（Agent Skills）
+
+仓库内直接包含 `SKILL.md` 的目录即为可安装的 Agent 技能。一条命令即可把技能安装到本机 AI 技能目录（默认自动探测豆包个人技能目录），安装后 Agent 可随时调用。
+
+```bash
+python install.py                           # 安装仓库内全部技能
+python install.py preflight-risk-record     # 只安装指定技能
+python install.py --list                    # 查看仓库内可用技能
+python install.py --target <目录>           # 指定技能安装目录
+```
+
+当前收录技能：
+
+| 技能 | 说明 |
+|------|------|
+| `preflight-risk-record` | 运航部值班干部航前风险提示记录表生成：读取出港签到表 → 按航线匹配历史风险 → 生成当日 docx |
+
+---
+
 ## 快速上手
 
 ```bash
