@@ -61,6 +61,18 @@ def save_as_png(path: str) -> dict:
 
 def _export_png(doc, path: str, quality: int) -> dict:
     """导出为 PNG。"""
+    # 本地补丁: Photoshop CS6 的 Save-for-Web 在默认参数下会输出超大错误位图
+    # （实测 18142x11311 的 GIF 写到 .png）。优先 SaveAs + PNGSaveOptions 并校验 PNG 头。
+    try:
+        options = win32com.client.Dispatch("Photoshop.PNGSaveOptions")
+        doc.SaveAs(path, options, True)
+        with open(path, "rb") as handle:
+            head = handle.read(8)
+        if head.startswith(b"\x89PNG\r\n\x1a\n"):
+            return {"format": "PNG", "path": path, "method": "SaveAs+PNGSaveOptions"}
+    except Exception:
+        pass
+
     options = win32com.client.Dispatch(
         "Photoshop.ExportOptionsSaveForWeb"
     )
@@ -68,7 +80,7 @@ def _export_png(doc, path: str, quality: int) -> dict:
     options.PNG8 = False
     options.Transparency = True
     doc.Export(path, 2, options)  # psSaveForWeb
-    return {"format": "PNG", "path": path}
+    return {"format": "PNG", "path": path, "method": "SaveForWeb"}
 
 
 def _export_jpg(doc, path: str, quality: int) -> dict:

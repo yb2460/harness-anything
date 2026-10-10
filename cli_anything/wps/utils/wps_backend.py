@@ -59,7 +59,7 @@ ppSaveAsPowerPoint4 = 3           # .ppt（4.0）
 ppSaveAsPowerPoint3 = 4           # .ppt（3.0）
 ppSaveAsPDF = 32                  # .pdf
 ppSaveAsHTML = 12                 # .html
-ppSaveAsOpenXMLPresentation = 1   # .pptx
+ppSaveAsOpenXMLPresentation = 24   # .pptx
 ppSaveAsOpenXMLShow = 36          # .ppsx
 
 # WPS COM ProgID 映射
@@ -270,7 +270,10 @@ def save_as(doc, path: str, doc_type: str = "writer", format_name: str = None):
         doc.SaveAs2(abs_path)
         return abs_path
 
-    doc.SaveAs2(abs_path, FileFormat=fmt_const)
+    try:
+        doc.SaveAs2(abs_path, FileFormat=fmt_const)
+    except AttributeError:
+        doc.SaveAs(abs_path, fmt_const)  # 本地补丁: WPS 表格(KET) 无 SaveAs2
     return abs_path
 
 

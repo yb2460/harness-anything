@@ -92,6 +92,13 @@ class ComBridge:
         try:
             self._app = win32com.client.Dispatch("Photoshop.Application")
             self._app.Visible = True  # 确保可见
+            # 本地补丁: 强制标尺单位为像素。CS6 在标尺单位为厘米时会把
+            # Documents.Add(640, 400, 72) 的宽高当作厘米，生成 640x400 cm 文档，
+            # 导出即 18142x11339 px 巨型位图。
+            try:
+                self._app.Preferences.RulerUnits = 1  # psPixels
+            except Exception:
+                pass
             time.sleep(0.5)  # 等待 COM 就绪
         except com_error as e:
             raise RuntimeError(
@@ -112,7 +119,7 @@ class ComBridge:
         """按名称获取文档，不指定则返回活跃文档。"""
         if name:
             for i in range(1, self.app.Documents.Count + 1):
-                doc = self.app.Documents[i]
+                doc = self.app.Documents.Item(i)
                 if doc.Name == name:
                     return doc
             return None
@@ -129,17 +136,17 @@ class ComBridge:
         """按名称查找图层。"""
         doc = doc or self.require_document()
         for i in range(1, doc.ArtLayers.Count + 1):
-            layer = doc.ArtLayers[i]
+            layer = doc.ArtLayers.Item(i)
             if layer.Name == name:
                 return layer
         # 也搜索图层组
         for i in range(1, doc.LayerSets.Count + 1):
-            group = doc.LayerSets[i]
+            group = doc.LayerSets.Item(i)
             if group.Name == name:
                 return group
             for j in range(1, group.ArtLayers.Count + 1):
-                if group.ArtLayers[j].Name == name:
-                    return group.ArtLayers[j]
+                if group.ArtLayers.Item(j).Name == name:
+                    return group.ArtLayers.Item(j)
         return None
 
     def list_layers(self, doc=None) -> list[dict]:
@@ -147,10 +154,10 @@ class ComBridge:
         doc = doc or self.require_document()
         layers = []
         for i in range(1, doc.ArtLayers.Count + 1):
-            layer = doc.ArtLayers[i]
+            layer = doc.ArtLayers.Item(i)
             layers.append(self._layer_info(layer))
         for i in range(1, doc.LayerSets.Count + 1):
-            group = doc.LayerSets[i]
+            group = doc.LayerSets.Item(i)
             info = self._layer_info(group)
             info["type"] = "group"
             layers.append(info)

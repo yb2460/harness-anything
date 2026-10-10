@@ -85,7 +85,7 @@ def _set_bg_color(doc, color: str):
     r, g, b = color_map[color.lower()]
     try:
         doc.Selection.SelectAll()
-        rgb = doc.ArtLayers[1]
+        rgb = doc.ArtLayers.Item(1)
         # 创建纯色填充层
     except Exception:
         pass  # 背景色默认已处理

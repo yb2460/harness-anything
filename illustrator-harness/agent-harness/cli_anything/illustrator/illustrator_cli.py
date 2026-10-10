@@ -16,7 +16,13 @@ import click
 import pythoncom
 
 from cli_anything.illustrator.utils.ai_backend import detect_illustrator, launch_illustrator
-from cli_anything.illustrator.core import project, layers, text, shapes, export as export_mod
+from cli_anything.illustrator.core import (
+    project as project_core,
+    layers,
+    text as text_core,
+    shapes,
+    export as export_mod,
+)
 from cli_anything.illustrator.utils.repl_skin import ReplSkin
 
 _JSON_HELP = "JSON output (machine-readable)"
@@ -64,7 +70,7 @@ def project():
 @click.pass_context
 def project_new(ctx, width, height, color_mode):
     """Create a new document."""
-    result = project.create_document(width, height, color_mode)
+    result = project_core.create_document(width, height, color_mode)
     ctx.obj["app"] = launch_illustrator(visible=ctx.obj.get("visible", True))
     _output(ctx, result)
 
@@ -73,7 +79,7 @@ def project_new(ctx, width, height, color_mode):
 @click.pass_context
 def project_open(ctx, path):
     """Open an existing document."""
-    result = project.open_document(path)
+    result = project_core.open_document(path)
     ctx.obj["app"] = launch_illustrator(visible=ctx.obj.get("visible", True))
     _output(ctx, result)
 
@@ -83,7 +89,7 @@ def project_open(ctx, path):
 def project_save(ctx, path):
     """Save the active document."""
     app = _get_app(ctx)
-    result = project.save_document(app, path)
+    result = project_core.save_document(app, path)
     _output(ctx, result)
 
 @project.command("info")
@@ -91,7 +97,7 @@ def project_save(ctx, path):
 def project_info(ctx):
     """Show active document information."""
     app = _get_app(ctx)
-    result = project.get_document_info(app)
+    result = project_core.get_document_info(app)
     _output(ctx, result)
 
 # ════════════════════════ layer ════════════════════════
@@ -163,7 +169,7 @@ def text():
 def text_add(ctx, content, x, y, font_size, font_name, r, g, b):
     """Add a text frame."""
     app = _get_app(ctx)
-    result = text.add_text(app, content, x, y, font_size, font_name, (r, g, b))
+    result = text_core.add_text(app, content, x, y, font_size, font_name, (r, g, b))
     _output(ctx, result)
 
 @text.command("list")
@@ -171,7 +177,7 @@ def text_add(ctx, content, x, y, font_size, font_name, r, g, b):
 def text_list(ctx):
     """List all text frames."""
     app = _get_app(ctx)
-    result = text.list_text_frames(app)
+    result = text_core.list_text_frames(app)
     _output(ctx, result)
 
 # ════════════════════════ shape ════════════════════════

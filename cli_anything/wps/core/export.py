@@ -204,7 +204,10 @@ def export(
     doc = None
     try:
         app = find_wps(doc_type)
-        app.Visible = False  # 后台运行
+        try:
+            app.Visible = False  # 后台运行
+        except Exception:
+            pass  # 本地补丁: WPS 演示(KWPP) 不接受 Visible=False
 
         doc = create_document(app, doc_type)
         _fill_document(doc, project, doc_type)
@@ -471,25 +474,62 @@ def _fill_impress(doc, project: Dict[str, Any]) -> None:
 
     for si, slide_data in enumerate(slides):
         if si == 0:
-            slide = doc.Slides(1)
+            try:
+                empty = doc.Slides.Count == 0
+            except Exception:
+                empty = False
+            # 本地补丁: WPS 新建的演示文稿可能是 0 张幻灯片，直接取 Slides(1) 会抛 com_error
+            slide = doc.Slides.Add(1, 2) if empty else doc.Slides(1)
         else:
             slide = doc.Slides.Add(si + 1, 2)  # ppLayoutText = 2
 
-        # 设置标题和内容（通过占位符）
         title = slide_data.get("title", "")
         content = slide_data.get("content", "")
 
-        for shape in slide.Shapes:
+        # 本地补丁: WPS 的 PlaceholderFormat.Type 返回数字字符串
+        # （"1"=标题，"3"=居中标题，"2"=正文），上游按 "Title" 子串判断在 WPS 上永不匹配，
+        # 于是标题写不进去、正文还被写进标题占位符。这里改为按索引 + 数字类型分配。
+        items = []
+        for i in range(1, slide.Shapes.Count + 1):
+            shape = slide.Shapes(i)
             try:
-                if shape.Type == 14 and title:  # msoPlaceholder = 14
-                    if "Title" in str(shape.PlaceholderFormat.Type):
-                        shape.TextFrame.TextRange.Text = title
+                if not shape.HasTextFrame:
+                    continue
+            except Exception:
+                continue
+            ph = ""
+            try:
+                ph = str(shape.PlaceholderFormat.Type)
             except Exception:
                 pass
+            items.append((i, ph))
+
+        if not items:
+            continue
+
+        title_idx = next((i for i, ph in items if ph in ("1", "3")), items[0][0])
+        body_idx = next((i for i, ph in items if ph == "2" and i != title_idx), None)
+        if body_idx is None:
+            body_idx = next((i for i, ph in items if i != title_idx), None)
+
+        if body_idx is None:
+            # 只有一个文本框：标题与正文写进同一占位符
+            if title or content:
+                try:
+                    slide.Shapes(title_idx).TextFrame.TextRange.Text = (
+                        (title + "\n" + content) if (title and content) else (title or content)
+                    )
+                except Exception:
+                    pass
+            continue
+
+        if title:
             try:
-                if shape.HasTextFrame and content:
-                    shape.TextFrame.TextRange.Text = content
+                slide.Shapes(title_idx).TextFrame.TextRange.Text = title
             except Exception:
                 pass
-
-
+        if content:
+            try:
+                slide.Shapes(body_idx).TextFrame.TextRange.Text = content
+            except Exception:
+                pass

@@ -133,7 +133,7 @@ def reorder(name: str, position: int) -> list[dict]:
     if position > 1:
         for _ in range(position - 1):
             try:
-                layer.Move(doc.ArtLayers[1], 4)  # psPlaceAfter
+                layer.Move(doc.ArtLayers.Item(1), 4)  # psPlaceAfter
             except Exception:
                 break
     return bridge.list_layers()
