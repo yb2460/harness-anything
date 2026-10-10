@@ -204,7 +204,10 @@ def export(
     doc = None
     try:
         app = find_wps(doc_type)
-        app.Visible = False  # 后台运行
+        # WPS 演示（KWPP.Application）的 Visible 属性只读，赋值会抛 com_error；
+        # 且 WPS 默认即后台运行，故 impress 跳过该赋值（writer/calc 保持原行为）。
+        if doc_type != "impress":
+            app.Visible = False  # 后台运行
 
         doc = create_document(app, doc_type)
         _fill_document(doc, project, doc_type)
@@ -461,6 +464,26 @@ def _fill_calc(doc, project: Dict[str, Any]) -> None:
                 pass
 
 
+def _parse_length(value: Any) -> float:
+    """将长度字符串解析为磅（pt），用于 WPS/PPT COM 形状坐标。
+
+    支持 "3cm" / "2in" / "100pt" / "12mm" / 纯数字（默认 pt）等格式。
+    """
+    if isinstance(value, (int, float)):
+        return float(value)
+    s = str(value).strip().lower()
+    try:
+        if s.endswith("cm"):
+            return float(s[:-2]) * 28.3464567  # 1cm = 28.3465pt
+        if s.endswith("in"):
+            return float(s[:-2]) * 72.0
+        if s.endswith("pt"):
+            return float(s[:-2])
+        return float(s)  # 纯数字，默认 pt
+    except ValueError:
+        return 0.0
+
+
 def _fill_impress(doc, project: Dict[str, Any]) -> None:
     """将内容填充到 WPS Impress 演示文稿。"""
     slides = project.get("slides", [])
@@ -468,6 +491,11 @@ def _fill_impress(doc, project: Dict[str, Any]) -> None:
     # 如果内容为空，至少保留一张幻灯片
     if not slides:
         return
+
+    # WPS 演示 Presentations.Add() 产生空演示文稿（Slides.Count=0），
+    # 与 MS PowerPoint 不同。此处兼容：若无幻灯片则用 Slides.Add 占位（ppLayoutText=2）。
+    if doc.Slides.Count == 0:
+        doc.Slides.Add(1, 2)
 
     for si, slide_data in enumerate(slides):
         if si == 0:
@@ -482,8 +510,13 @@ def _fill_impress(doc, project: Dict[str, Any]) -> None:
         for shape in slide.Shapes:
             try:
                 if shape.Type == 14 and title:  # msoPlaceholder = 14
-                    if "Title" in str(shape.PlaceholderFormat.Type):
+                    ptype = shape.PlaceholderFormat.Type
+                    # WPS 返回整数枚举（1=标题 2=正文），MS PowerPoint 也返回
+                    # 整数（ppPlaceholderTitle=1 / ppPlaceholderCenterTitle=13）；
+                    # 部分环境返回字符串/枚举对象，故同时兼容字符串判断。
+                    if ptype == 1 or ptype == 13 or "Title" in str(ptype):
                         shape.TextFrame.TextRange.Text = title
+                        continue  # 标题占位符已赋值，避免被下方正文逻辑重复写入
             except Exception:
                 pass
             try:
@@ -491,5 +524,24 @@ def _fill_impress(doc, project: Dict[str, Any]) -> None:
                     shape.TextFrame.TextRange.Text = content
             except Exception:
                 pass
+
+        # 渲染 add-element 添加的形状（text_box 等）
+        for elem in slide_data.get("elements", []):
+            try:
+                if elem.get("type") != "text_box":
+                    continue  # 其他类型最小支持：安全跳过
+                text = str(elem.get("text", "")).strip()
+                if not text:
+                    continue
+                box = slide.Shapes.AddTextbox(
+                    1,  # msoTextOrientationHorizontal = 1
+                    _parse_length(elem.get("x", "2cm")),
+                    _parse_length(elem.get("y", "2cm")),
+                    _parse_length(elem.get("width", "10cm")),
+                    _parse_length(elem.get("height", "5cm")),
+                )
+                box.TextFrame.TextRange.Text = text
+            except Exception:
+                pass  # 单元素失败不中断整页导出
 
 
