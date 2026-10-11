@@ -359,6 +359,45 @@ Backend:
 
 ## Command Groups
 
+### Optional Web Research
+
+Use [Parallel Search MCP](https://docs.parallel.ai/integrations/mcp/search-mcp)
+to discover web sources and fetch page excerpts alongside local-library research.
+The anonymous endpoint provides free search in Fast mode and page fetching, with
+no account or API key required. Free access has rate limits.
+
+Install the optional dependencies **from this repository's root**:
+
+```bash
+python -m pip install -e ".[web]"
+```
+
+The existing Python module entry point works on Windows, macOS and Linux for these
+commands, without a Zotero installation or profile:
+
+```bash
+python -m cli_anything.zotero --json web search "Find sources on reproducible literature reviews" --query "reproducible literature review methods"
+python -m cli_anything.zotero --json web fetch https://www.zotero.org/support/ --objective "How Zotero helps organize research"
+```
+
+Results are MCP result envelopes: `content` contains text blocks, and
+`structuredContent`, when supplied, contains source URLs, titles and excerpts.
+Use these sources as research context and verify citations before importing
+records through the existing `import` commands. Web commands do not modify the
+Zotero library, saved searches, session state or `item analyze` behavior. They
+connect to `https://search.parallel.ai/mcp` using Streamable HTTP and do not load
+saved credentials or environment API keys. Queries and requested URLs are sent
+to Parallel.
+
+Repeat `--query` to search related angles. For a multi-step research task, generate
+a UUID once and pass the same `--session-id` to related search and fetch commands;
+each one-shot call otherwise leaves the session identifier to the server.
+`web fetch` accepts up to 20 HTTP/HTTPS URLs and supports `--query` to reuse the
+search keywords. Excerpts are the default; request `--full-content` only when you
+need full page markdown. Both commands accept `--timeout` (1–300 seconds,
+default 60) for the complete operation and exit nonzero on connection or MCP tool
+errors. These commands return sources directly and do not invoke a language model.
+
 ### `app`
 
 | Command | Purpose | Requires Zotero Running | Backend |

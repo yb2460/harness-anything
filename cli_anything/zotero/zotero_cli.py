@@ -1069,6 +1069,76 @@ def repl_command(ctx: click.Context) -> int:
     return run_repl(_current_cli_config(ctx))
 
 
+@cli.group()
+def web() -> None:
+    """Opt-in web research via Parallel Search MCP; no Zotero profile needed."""
+
+
+def _web_call(ctx: click.Context, name: str, arguments: dict[str, Any], timeout: int) -> None:
+    from cli_anything.zotero.utils.parallel_mcp import call_tool
+
+    try:
+        emit(ctx, call_tool(name, arguments, timeout=timeout))
+    except RuntimeError as exc:
+        raise click.ClickException(str(exc)) from exc
+
+
+@web.command("search")
+@click.argument("objective", type=click.STRING)
+@click.option("--query", "queries", multiple=True, required=True, help="Keyword query; repeat for related queries.")
+@click.option("--session-id", default=None, help="Reuse across related search/fetch calls (up to 100 characters).")
+@click.option("--timeout", type=click.IntRange(1, 300), default=60, show_default=True, help="Total operation timeout in seconds.")
+@click.pass_context
+def web_search(ctx: click.Context, objective: str, queries: tuple[str, ...], session_id: str | None, timeout: int) -> None:
+    """Search the web for an objective and return source URLs and excerpts."""
+    if not objective.strip() or any(not query.strip() for query in queries):
+        raise click.ClickException("Objective and queries must not be blank")
+    arguments: dict[str, Any] = {"objective": objective, "search_queries": list(queries)}
+    if session_id is not None:
+        if not 1 <= len(session_id) <= 100:
+            raise click.ClickException("Session ID must contain 1 to 100 characters")
+        arguments["session_id"] = session_id
+    _web_call(ctx, "web_search", arguments, timeout)
+
+
+@web.command("fetch")
+@click.argument("urls", nargs=-1, required=True)
+@click.option("--objective", default=None, help="Focus the page excerpts (up to 200 characters).")
+@click.option("--query", "queries", multiple=True, help="Reuse the queries that found these URLs.")
+@click.option("--full-content", is_flag=True, help="Include full page markdown; output can be large.")
+@click.option("--session-id", default=None, help="Reuse across related search/fetch calls (up to 100 characters).")
+@click.option("--timeout", type=click.IntRange(1, 300), default=60, show_default=True, help="Total operation timeout in seconds.")
+@click.pass_context
+def web_fetch(ctx: click.Context, urls: tuple[str, ...], objective: str | None, queries: tuple[str, ...], full_content: bool, session_id: str | None, timeout: int) -> None:
+    """Fetch excerpts from up to 20 HTTP/HTTPS pages without importing them."""
+    from urllib.parse import urlsplit
+
+    if len(urls) > 20:
+        raise click.ClickException("Fetch accepts at most 20 URLs")
+    for url in urls:
+        try:
+            parsed = urlsplit(url)
+            valid = parsed.scheme in {"http", "https"} and bool(parsed.hostname)
+        except ValueError:
+            valid = False
+        if not valid:
+            raise click.ClickException(f"Expected an HTTP/HTTPS URL: {url}")
+    if objective is not None and len(objective) > 200:
+        raise click.ClickException("Fetch objective must be at most 200 characters")
+    if any(not query.strip() for query in queries):
+        raise click.ClickException("Queries must not be blank")
+    arguments: dict[str, Any] = {"urls": list(urls), "full_content": full_content}
+    if objective is not None:
+        arguments["objective"] = objective
+    if queries:
+        arguments["search_queries"] = list(queries)
+    if session_id is not None:
+        if not 1 <= len(session_id) <= 100:
+            raise click.ClickException("Session ID must contain 1 to 100 characters")
+        arguments["session_id"] = session_id
+    _web_call(ctx, "web_fetch", arguments, timeout)
+
+
 # ===== Skills Bridge: 调用 27 个 Academic Research Skills =====
 @cli.group("skills")
 def skills_group():

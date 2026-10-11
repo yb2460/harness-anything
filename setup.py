@@ -15,6 +15,7 @@ setup(
     ],
     extras_require={
         "dev": ["pytest", "pytest-cov"],
+        "web": ["mcp>=1.26,<2", "httpx>=0.27,<1"],
     },
     entry_points={
         "console_scripts": [

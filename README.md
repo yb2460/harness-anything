@@ -39,6 +39,11 @@ cli-anything-zotero skills pipeline meta_analysis     # Meta分析流程
 cli-anything-zotero skills journal "Nature"           # 期刊图表规范
 ```
 
+可选的免费网页检索与页面摘录（无需账号或 API key）：在仓库根目录运行
+`python -m pip install -e ".[web]"`，然后使用
+`python -m cli_anything.zotero --json web search "文献检索方法" --query "systematic literature review methods"`。
+使用方法见 [Zotero 网页研究](cli_anything/zotero/README.md#optional-web-research)。
+
 **7 大 Skill 分类：**
 
 | 分类 | Skill 数 | 能力 |

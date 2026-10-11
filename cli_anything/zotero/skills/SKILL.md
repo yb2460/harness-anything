@@ -32,6 +32,17 @@ python -m cli_anything.zotero
 
 ## Command Groups
 
+### Web Research (Optional)
+
+Install `python -m pip install -e ".[web]"` from the repository root. Use
+`python -m cli_anything.zotero --json web search "research objective" --query "keyword search query"`
+for free, keyless web search through Parallel Search MCP, and
+`python -m cli_anything.zotero --json web fetch https://www.zotero.org/support/`
+for page excerpts. These commands need no Zotero profile and return MCP result
+envelopes for downstream research; they do not import records or call a model.
+Verify web sources before citing them. Reuse a generated UUID with `--session-id`
+across related search/fetch calls. Queries and requested URLs are sent to Parallel.
+
 ### App
 
 Application and runtime inspection commands.
