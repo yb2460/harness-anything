@@ -298,13 +298,38 @@ def export_pdf(doc, output_path: str, doc_type: str = "writer"):
 def close_document(doc, save: bool = False):
     """关闭文档。
 
+    SaveChanges 必须显式传入。不带参数的 ``doc.Close()`` 由宿主决定是否保存，
+    而调用方通常已经先把 ``DisplayAlerts`` 压成 0 —— 于是"是否保存"的提示被吞掉，
+    改动被直接提交到磁盘，``save=False`` 实际变成了保存。
+
     Args:
         doc: COM Document 对象
         save: 是否在关闭前保存
     """
-    try:
-        if save:
+    if save:
+        try:
             doc.Save()
+        except Exception:
+            pass
+
+    # Word: Close(SaveChanges[, OriginalFormat, RouteDocument])，0 = wdDoNotSaveChanges
+    # Excel: Close([SaveChanges])，False 同义
+    try:
+        doc.Close(1 if save else 0)
+        return
+    except Exception:
+        pass
+
+    # 少数宿主的延迟绑定只接受关键字形式
+    try:
+        doc.Close(SaveChanges=bool(save))
+        return
+    except Exception:
+        pass
+
+    # 最后的兜底：先声明"没有未保存的改动"，再走无参 Close()
+    try:
+        doc.Saved = True
         doc.Close()
     except Exception:
         pass  # 忽略已关闭的文档错误
