@@ -265,12 +265,34 @@ def save_as(doc, path: str, doc_type: str = "writer", format_name: str = None):
 
     formats = FORMAT_SAVEAS_MAP.get(doc_type, {})
     fmt_const = formats.get(format_name)
+
+    # SaveAs2 是 Word 专有的方法。Excel（Workbook）与 PowerPoint（Presentation）
+    # 家族历来只有 SaveAs，而且 win32com 的动态分派是在**属性查找阶段**就抛
+    # AttributeError（文本形如 "Add.SaveAs2. Did you mean: 'SaveAs'?"）——
+    # 也就是说这不是"调用失败"，而是这个属性根本不存在，不能用调用期的
+    # 异常来兜。这里改成按属性是否存在来选择。
+    method = None
+    for name in ("SaveAs2", "SaveAs"):
+        try:
+            method = getattr(doc, name, None)
+        except Exception:
+            method = None
+        if method is not None:
+            break
+    if method is None:
+        raise AttributeError(
+            f"{doc_type} 的文档对象既没有 SaveAs2 也没有 SaveAs，无法另存为：{abs_path}"
+        )
+
     if fmt_const is None:
-        # 格式不在映射表中，尝试直接保存
-        doc.SaveAs2(abs_path)
+        method(abs_path)
         return abs_path
 
-    doc.SaveAs2(abs_path, FileFormat=fmt_const)
+    try:
+        method(abs_path, FileFormat=fmt_const)
+    except TypeError:
+        # 少数宿主的 SaveAs 只接受位置参数
+        method(abs_path, fmt_const)
     return abs_path
 
 
@@ -298,13 +320,38 @@ def export_pdf(doc, output_path: str, doc_type: str = "writer"):
 def close_document(doc, save: bool = False):
     """关闭文档。
 
+    SaveChanges 必须显式传入。不带参数的 ``doc.Close()`` 由宿主决定是否保存，
+    而调用方通常已经先把 ``DisplayAlerts`` 压成 0 —— 于是"是否保存"的提示被吞掉，
+    改动被直接提交到磁盘，``save=False`` 实际变成了保存。
+
     Args:
         doc: COM Document 对象
         save: 是否在关闭前保存
     """
-    try:
-        if save:
+    if save:
+        try:
             doc.Save()
+        except Exception:
+            pass
+
+    # Word: Close(SaveChanges[, OriginalFormat, RouteDocument])，0 = wdDoNotSaveChanges
+    # Excel: Close([SaveChanges])，False 同义
+    try:
+        doc.Close(1 if save else 0)
+        return
+    except Exception:
+        pass
+
+    # 少数宿主的延迟绑定只接受关键字形式
+    try:
+        doc.Close(SaveChanges=bool(save))
+        return
+    except Exception:
+        pass
+
+    # 最后的兜底：先声明"没有未保存的改动"，再走无参 Close()
+    try:
+        doc.Saved = True
         doc.Close()
     except Exception:
         pass  # 忽略已关闭的文档错误
