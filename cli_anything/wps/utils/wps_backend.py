@@ -285,7 +285,6 @@ def save_as(doc, path: str, doc_type: str = "writer", format_name: str = None):
         )
 
     if fmt_const is None:
-        # 格式不在映射表中，尝试直接保存
         method(abs_path)
         return abs_path
 
