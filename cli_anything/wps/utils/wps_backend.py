@@ -53,13 +53,13 @@ xlWorkbookNormal = -4143          # .xls（97-2003）
 xlPDF = 0                         # PDF
 
 # PPT 格式常量
-ppSaveAsPresentation = 1          # .pptx
+ppSaveAsPresentation = 1          # 默认格式；在 WPS 上落成旧版二进制 .ppt
 ppSaveAsPowerPoint7 = 2           # .ppt（95）
 ppSaveAsPowerPoint4 = 3           # .ppt（4.0）
 ppSaveAsPowerPoint3 = 4           # .ppt（3.0）
 ppSaveAsPDF = 32                  # .pdf
 ppSaveAsHTML = 12                 # .html
-ppSaveAsOpenXMLPresentation = 1   # .pptx
+ppSaveAsOpenXMLPresentation = 24  # .pptx（显式 OOXML，与 MS 枚举一致）
 ppSaveAsOpenXMLShow = 36          # .ppsx
 
 # WPS COM ProgID 映射
@@ -106,7 +106,7 @@ FORMAT_SAVEAS_MAP = {
     },
     "impress": {
         "pptx": ppSaveAsOpenXMLPresentation,
-        "ppt": ppSaveAsPowerPoint7,
+        "ppt": ppSaveAsPresentation,     # WPS: 1 = 旧版二进制（.ppt）；2 仍会写成 OOXML ZIP
         "pdf": ppSaveAsPDF,
         "html": ppSaveAsHTML,
     },
@@ -265,12 +265,17 @@ def save_as(doc, path: str, doc_type: str = "writer", format_name: str = None):
 
     formats = FORMAT_SAVEAS_MAP.get(doc_type, {})
     fmt_const = formats.get(format_name)
+
+    # WPS 的 Workbook / Presentation 只有 SaveAs，没有 SaveAs2
+    # （Word 的 Document 才有 SaveAs2）。硬调 SaveAs2 会抛 AttributeError。
+    saver = doc.SaveAs2 if hasattr(doc, "SaveAs2") else doc.SaveAs
+
     if fmt_const is None:
         # 格式不在映射表中，尝试直接保存
-        doc.SaveAs2(abs_path)
+        saver(abs_path)
         return abs_path
 
-    doc.SaveAs2(abs_path, FileFormat=fmt_const)
+    saver(abs_path, FileFormat=fmt_const)
     return abs_path
 
 
@@ -290,6 +295,10 @@ def export_pdf(doc, output_path: str, doc_type: str = "writer"):
 
     if doc_type == "impress":
         doc.SaveAs(abs_path, ppSaveAsPDF)
+    elif doc_type in ("calc", "et"):
+        # WPS 表格的 ExportAsFixedFormat 签名是 (Type, Filename, ...)，
+        # 与 Writer 的 (Filename, ExportFormat) 相反。
+        doc.ExportAsFixedFormat(0, abs_path)
     else:
         doc.ExportAsFixedFormat(abs_path, 17)  # 17 = wdFormatPDF
     return abs_path

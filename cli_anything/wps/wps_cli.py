@@ -828,6 +828,14 @@ def repl(project_path):
     global _repl_mode
     _repl_mode = True
 
+    # 非真实控制台（管道 / 重定向）时 stdin/stdout 默认按 GBK，中文会乱码甚至报
+    # UnicodeEncodeError；统一改成 UTF-8，保证脚本化调用能正确读写中文。
+    for _stream in (sys.stdin, sys.stdout, sys.stderr):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
     skin = ReplSkin("wps", version="1.0.0")
 
     if project_path:
