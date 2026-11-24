@@ -17,11 +17,18 @@ class WPSConnectionError(RuntimeError):
     pass
 
 
-def connect_wps(visible: bool = True, kill_first: bool = True, retries: int = 4):
+# 演示文稿保存格式常量（WPS 12.x 实测；ppSaveAsOpenXMLPresentation=24 才落成 OOXML/ZIP）
+_SAVEAS_FORMAT = {".pptx": 24, ".ppt": 1, ".ppsx": 28, ".pps": 1}
+
+
+def connect_wps(visible: bool = True, kill_first: bool = False, retries: int = 4):
     """连接 WPS 演示 COM。
 
-    生成前先 taskkill 释放上一轮可能残留的锁与 RPC 连接，
-    否则 SaveAs 可能静默失败或报 RPC 不可用。
+    kill_first 默认关闭：`taskkill /F /IM wps.exe` 会连带杀掉用户已打开的文档，
+    只有显式传 True 时才清场。
+
+    WPS 12.x 的 KWPP.Application 不接受 Visible=False（抛 E_FAIL 0x80004005），
+    因此 visible=False 用「Visible=True + WindowState=1（最小化）」实现后台生成。
     """
     import pythoncom
     import win32com.client
@@ -37,7 +44,12 @@ def connect_wps(visible: bool = True, kill_first: bool = True, retries: int = 4)
             app = win32com.client.Dispatch("KWPP.Application")
             time.sleep(1.5)
             _ = app.Presentations.Count   # 触发 RPC 验证
-            app.Visible = visible
+            app.Visible = True
+            if not visible:
+                try:
+                    app.WindowState = 1   # ppWindowMinimized
+                except Exception:         # noqa: BLE001
+                    pass
             return app
         except Exception as e:            # noqa: BLE001
             last = e
@@ -104,7 +116,11 @@ class Deck:
         """
         out_path = Path(out_path).expanduser().resolve()
         paths.ensure_dir(out_path.parent)
-        self.pres.SaveAs(str(out_path))
+        fmt = _SAVEAS_FORMAT.get(out_path.suffix.lower())
+        if fmt is not None:
+            self.pres.SaveAs(str(out_path), fmt)          # 24 = pptx(OXML)，1 = ppt
+        else:
+            self.pres.SaveAs(str(out_path))
         pdf_out = None
         if pdf:
             pdf_out = Path(pdf_path).expanduser().resolve() if pdf_path else out_path.with_suffix(".pdf")
