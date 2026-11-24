@@ -17,6 +17,31 @@ try:
 except ImportError:
     COM_AVAILABLE = False
 
+
+def _minimize_app_window(app) -> None:
+    """把 WPS 主窗口最小化。
+
+    WPS 演示（KWPP）在 Visible=False 时 SaveAs 会返回 com_error E_FAIL，
+    所以演示文档保持可见，改为把窗口最小化，避免弹到前台。
+    """
+    try:
+        import win32con
+        import win32gui
+    except ImportError:
+        return
+    hwnd = 0
+    for attr in ("Hwnd", "HWND"):
+        try:
+            hwnd = int(getattr(app, attr))
+            break
+        except Exception:
+            continue
+    if hwnd:
+        try:
+            win32gui.ShowWindow(hwnd, win32con.SW_MINIMIZE)
+        except Exception:
+            pass
+
 # WPS 文件格式映射
 WPS_FORMAT_MAP = {
     "writer": {
@@ -204,7 +229,22 @@ def export(
     doc = None
     try:
         app = find_wps(doc_type)
-        app.Visible = False  # 后台运行
+        # WPS 演示在 Visible=False 时 SaveAs 失败，改为保持可见再最小化窗口。
+        if doc_type == "impress":
+            try:
+                app.Visible = True
+            except Exception:
+                pass
+            _minimize_app_window(app)
+        else:
+            app.Visible = False  # 后台运行
+
+        # WPS 在保存/导出后会弹「是否打开/另存为」类提示框，阻塞 COM 调用。
+        for _attr in ("DisplayAlerts", "AlertBeforeOverwriting"):
+            try:
+                setattr(app, _attr, False)
+            except Exception:
+                pass
 
         doc = create_document(app, doc_type)
         _fill_document(doc, project, doc_type)
@@ -228,7 +268,7 @@ def export(
         }
 
         close_document(doc, save=False)
-        quit_app(app)
+        quit_app(app, force=True)
         return result
 
     except Exception:
@@ -239,7 +279,7 @@ def export(
                 pass
         if app:
             try:
-                quit_app(app)
+                quit_app(app, force=True)
             except Exception:
                 pass
         raise
@@ -471,24 +511,33 @@ def _fill_impress(doc, project: Dict[str, Any]) -> None:
 
     for si, slide_data in enumerate(slides):
         if si == 0:
-            slide = doc.Slides(1)
+            # WPS 演示新建后是 0 页（PowerPoint 是 1 页），
+            # 直接 doc.Slides(1) 会抛 com_error E_FAIL。
+            if doc.Slides.Count == 0:
+                slide = doc.Slides.Add(1, 1)  # 1 = ppLayoutTitle
+            else:
+                slide = doc.Slides(1)
         else:
-            slide = doc.Slides.Add(si + 1, 2)  # ppLayoutText = 2
+            slide = doc.Slides.Add(si + 1, 1)  # 1 = ppLayoutTitle
 
-        # 设置标题和内容（通过占位符）
         title = slide_data.get("title", "")
         content = slide_data.get("content", "")
 
-        for shape in slide.Shapes:
+        shapes = slide.Shapes
+        # WPS 的占位符类型枚举与 PowerPoint 不完全一致，
+        # 按形状顺序写（第 1 个标题、第 2 个正文）比依赖 PlaceholderFormat 更稳。
+        if title:
             try:
-                if shape.Type == 14 and title:  # msoPlaceholder = 14
-                    if "Title" in str(shape.PlaceholderFormat.Type):
-                        shape.TextFrame.TextRange.Text = title
+                shapes(1).TextFrame.TextRange.Text = title
             except Exception:
                 pass
+        if content:
             try:
-                if shape.HasTextFrame and content:
-                    shape.TextFrame.TextRange.Text = content
+                if shapes.Count >= 2:
+                    shapes(2).TextFrame.TextRange.Text = content
+                else:
+                    box = shapes.AddTextbox(1, 40, 120, 600, 200)
+                    box.TextFrame.TextRange.Text = content
             except Exception:
                 pass
 

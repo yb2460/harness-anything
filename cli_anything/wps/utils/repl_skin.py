@@ -507,6 +507,10 @@ class ReplSkin:
             return session
         except ImportError:
             return None
+        except Exception:
+            # 没有真实控制台（管道 / 重定向 / 非交互宿主）时 prompt_toolkit 会抛
+            # NoConsoleScreenBufferError，这里退回到 input()，方便脚本化调用
+            return None
 
     def get_input(self, pt_session, project_name: str = "",
                   modified: bool = False, context: str = "") -> str:
@@ -521,13 +525,21 @@ class ReplSkin:
         Returns:
             User input string (stripped).
         """
-        if pt_session is not None:
+        if pt_session is not None and not getattr(self, "_pt_broken", False):
             from prompt_toolkit.formatted_text import FormattedText
             tokens = self.prompt_tokens(project_name, modified, context)
-            return pt_session.prompt(FormattedText(tokens)).strip()
-        else:
-            raw_prompt = self.prompt(project_name, modified, context)
-            return input(raw_prompt).strip()
+            try:
+                return pt_session.prompt(FormattedText(tokens)).strip()
+            except Exception as exc:
+                if exc.__class__.__name__ != "NoConsoleScreenBufferError":
+                    raise
+                self._pt_broken = True
+        raw_prompt = self.prompt(project_name, modified, context)
+        try:
+            raw_prompt.encode(getattr(sys.stdout, "encoding", None) or "utf-8")
+        except (UnicodeEncodeError, LookupError):
+            raw_prompt = "cli-anything> "
+        return input(raw_prompt).strip()
 
     # ── Toolbar builder ───────────────────────────────────────────────
 
